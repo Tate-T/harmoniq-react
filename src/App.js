@@ -1,6 +1,4 @@
 import { ArticlesList } from './components/ArticlesList/ArticlesList';
-import { Footer } from './components/Footer/footer';
-import { Header } from './components/Header/Header';
 import { Articles } from './pages/Articles/Articles';
 import { ArticlesPage } from './pages/ArticlesPage/ArticlesPage';
 import { Auth } from './pages/Auth/Auth';
