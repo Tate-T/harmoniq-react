@@ -6,3 +6,4 @@
 6. сторінка AuthorProfilePage - Святослав
 7. сторінка CreateArticlePage - Іван
 8. сторінка UserProfile(for login user) - Софія
+9. хефдер і футер - Остап
