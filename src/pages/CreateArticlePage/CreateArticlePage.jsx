@@ -1,5 +1,6 @@
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/footer";
+import nature from "../../images/nature.jpg";
 
 export const CreateArticlePage = () => {
   return (
