@@ -10,15 +10,15 @@ export const Home = () => {
     return <>
         <Header />
         <main>
-            <section>
-                <div>
-                    <h1>Find your harmony in community</h1>
-                    <div>
-                        <button>Go to Articles</button>
-                        <button>Register</button>
+            <section className='info'>
+                <div className='info_wrapper'>
+                    <h1 className='info__title'>Find your harmony in community</h1>
+                    <div className='info__btns'>
+                        <button className='info__btns--btn'>Go to Articles</button>
+                        <button className='info__btns--btn'>Register</button>
                     </div>
                 </div>
-                <img src={sec1img} alt="Section image" />
+                <img className='info__img' src={sec1img} alt="Section image" />
             </section>
             <section>
                 <div>
