@@ -1,0 +1,64 @@
+
+
+.createArticle__maine-title {
+  color: var(--Black, #070721);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Manrope;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.createArticle__title {
+  color: var(--Black, #070721);
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.createArticle__text {
+  color: var(--Black, #070721);
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.createArticle__big-title {
+    color: var(--Black, #070721);
+font-family: Manrope;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.createArticle__img {
+height: 280px;
+flex-direction: column;
+border-radius: 24px;
+background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+
+.createArticle__button {
+    display: flex;
+padding: 12px 16px;
+justify-content: center;
+align-items: center;
+gap: var(--gap-3, 12px);
+align-self: stretch;
+border-radius: 64px;
+background: var(--Green, #649179);
+color: var(--White, #F7FFFB);
+
+/* body/md/SemiBold */
+font-family: Manrope;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
