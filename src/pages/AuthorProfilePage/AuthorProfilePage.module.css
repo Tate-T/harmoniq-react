@@ -1,0 +1,85 @@
+.app {
+  padding: 20px;
+  background-color: #f3faf4;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.profileImg {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.profileName {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.profileInfo {
+  color: #555;
+  margin: 0;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #e3f1e5;
+  border-radius: 16px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cardImg {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.cardAuthor {
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 5px 0;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: #333;
+  flex-grow: 1;
+  margin: 0 0 12px 0;
+}
+
+.cardBtn {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cardBtn:hover {
+  background-color: #f3f3f3;
+}
