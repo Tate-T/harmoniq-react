@@ -1,0 +1,31 @@
+.info {
+  padding: 48px 108px 0px;
+  width: 1440px;
+  height: 609px;
+
+  &__wrapper {
+    width: 599px;
+    height: 389px;
+  }
+
+  &__title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 92px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: #649179;
+  }
+
+  &__btns {
+    width: 392px;
+    height: 57px;
+
+    &-- {
+      border-radius: 64px;
+      padding: 16px;
+      width: 184px;
+      height: 57px;
+    }
+  }
+}
