@@ -3,13 +3,13 @@ import { Footer } from "../../components/Footer/footer";
 import { Register } from "./RegisterForm";
 import { Login } from "./LoginForm";
 
-export const CreateArticlePage = () => {};
+export const CreateArticlePage = () => {;
 return <>
-<section>
-    <h1>Create an article</h1>
-    <h2>Article Title</h2>
-    <p>9 tested tips to improve your wellbeing and quality of life</p>
-    <p>If you are a person who remains busy in work and other matters and pays no attention to your health and wellbeing, you must take a break from the robotic routine and pick healthy habits.
+<section className="createArticle">
+    <h1 className="createArticle__maine-title">Create an article</h1>
+    <h2 className="createArticle__title">Article Title</h2>
+    <p className="createArticle__text">9 tested tips to improve your wellbeing and quality of life</p>
+    <p className="createArticle__big-title">If you are a person who remains busy in work and other matters and pays no attention to your health and wellbeing, you must take a break from the robotic routine and pick healthy habits.
 According to a psychologist, eating well and exercise gives your body and brain instant benefits of managing stress, depression, and anxiety. True wellbeing comes with balance, constant growth and acceptance.
 Here are a few effective and tested ways that can help you improve your wellbeing:
 1. Take Proper Sleep:
@@ -41,7 +41,8 @@ Learn to live in the present moment and try not to think too much about the futu
 It’s Simple: Laugh and Enjoy!
 Don’t take life too seriously. Those who remain happy, smile more and try to keep themselves happy experience better quality of life than those who remain worried all the time. According to a study, children laugh 200 times a day while adults laugh 15 times a day.
 Staying happy and laughing more is essential for a quality life.</p>
-<img src="../../images/nature.jpg" alt="nature"/>
-<button type="submit">Publish </button>
+<img className="createArticle__img" src="../../images/nature.jpg" alt="nature"/>
+<button className="createArticle__button" type="submit">Publish</button>
 </section>
 </>
+}
