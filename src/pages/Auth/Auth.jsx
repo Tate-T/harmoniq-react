@@ -9,7 +9,7 @@ export const Auth = () => {
     return <>
     <Header/>
     <main>
-    {isRegistred === true ? <Login/> : <Register/>}
+    {isRegistred === false ? <Login/> : <Register/>}
     </main>
     <Footer/>
     </>

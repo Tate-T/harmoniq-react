@@ -1,26 +1,30 @@
+import styles from './Auth.module.css'
+import eye from '../../images/auth/eye-crossed.svg'
 export const Register = () => {
-    return <form>
-            <h2>Register</h2>
-            <p>Join our community of mindfulness and wellbeing!</p>
-            <ul className="auth-list">
-                <li className="auth-item">
-                    <p className="auth-label">Enter your name</p>
-                    <input type="text" className="auth-input" placeholder="Max"/>
+    return <form className={styles.registerForm}>
+            <h2 className={styles.name}>Register</h2>
+            <p className={styles.p}>Join our community of mindfulness and wellbeing!</p>
+            <ul className={styles.list}>
+                <li className={styles.item}>
+                    <p className={styles.label}>Enter your name</p>
+                    <input type="text" className={styles.input} placeholder="Max"/>
                 </li>
-                <li className="auth-item">
-                    <p className="auth-label">Enter your email address</p>
-                    <input type="text" className="auth-input" placeholder="email@gmail.com"/>
+                <li className={styles.item}>
+                    <p className={styles.label}>Enter your email address</p>
+                    <input type="text" className={styles.input} placeholder="email@gmail.com"/>
                 </li>
-                <li className="auth-item">
-                    <p className="auth-label">Create a strong password</p>
-                    <input type="text" className="auth-input" placeholder="*****"/>
+                <li className={styles.item}>
+                    <p className={styles.label}>Create a strong password</p>
+                    <input type="text" className={styles.input} placeholder="*****"/>
+                    <img src={eye} alt="" className={styles.eye}/>
                 </li>
-                <li className="auth-item">
-                    <p className="auth-label">Repeat your password</p>
-                    <input type="text" className="auth-input" placeholder="*****"/>
+                <li className={styles.item}>
+                    <p className={styles.label}>Repeat your password</p>
+                    <input type="text" className={styles.input} placeholder="*****"/>
+                    <img src={eye} alt="" className={styles.eye}/>
                 </li>
             </ul>
-            <button className="auth-btn" type="submit">Create account</button>
-            <p className="auth-sugestion">Already have an account? <a href="" className="auth-log-link">Log in</a></p>
+            <button className={styles.btn} type="submit">Create account</button>
+            <p className={styles.sugtestion}>Already have an account? <a href="" className={styles.link}>Log in</a></p>
         </form>
 }
