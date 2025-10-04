@@ -9,6 +9,7 @@ import { Home } from './pages/Home/Home';
 import { UserProfile } from './pages/UserProfile/UserProfile';
 import './App.css';
 
+
 function App() {
   return (
     <div className="App">
