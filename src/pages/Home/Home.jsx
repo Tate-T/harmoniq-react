@@ -1,5 +1,6 @@
 import { Header } from '../../components/Header/Header'
 import { Footer } from '../../components/Footer/footer'
+// import {HomeCss} from './Home.module.css'
 import fam from '../../images/fam.png'
 import flower from '../../images/flower.png'
 import person from '../../images/person.png'
@@ -14,8 +15,8 @@ export const Home = () => {
                 <div className='info_wrapper'>
                     <h1 className='info__title'>Find your harmony in community</h1>
                     <div className='info__btns'>
-                        <button className='info__btns--btn'>Go to Articles</button>
-                        <button className='info__btns--btn'>Register</button>
+                        <button className='info__btns--btn1'>Go to Articles</button>
+                        <button className='info__btns--btn2'>Register</button>
                     </div>
                 </div>
                 <img className='info__img' src={sec1img} alt="Section image" />
