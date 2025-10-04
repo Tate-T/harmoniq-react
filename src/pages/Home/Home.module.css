@@ -138,6 +138,17 @@
   color: #374f42;
 }
 
+.popular__authorsList > div:nth-child(n + 4) {
+  display: none !important;
+}
+
+.popular__authorsList {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 440px;
+  overflow: hidden;
+}
+
 .top {
   margin: 0 0 72px 0;
 }

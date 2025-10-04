@@ -6,6 +6,7 @@ import flower from '../../images/flower.png'
 import person from '../../images/person.png'
 import sec1img from '../../images/sec1img.png'
 import {AuthorsList} from '../Authors/components/AuthorsList'
+import {AuthorProfilePage} from '../AuthorProfilePage/AuthorProfilePage'
 
 
 export const Home = () => {
@@ -13,6 +14,7 @@ export const Home = () => {
         <Header />
         <main>
             <section className={styles.info}>
+                <div className='container'>
                 <div className={styles.info_wrapper}>
                     <h1 className={styles.info__title}>Find your harmony in community</h1>
                     <div className={styles.info__btns}>
@@ -21,6 +23,7 @@ export const Home = () => {
                     </div>
                 </div>
                 <img className={styles.info__img} src={sec1img} alt="Section image" />
+                </div>
             </section>
             <section className={styles.about}>
                 <div className={styles.about__firstWrapper}>
@@ -44,6 +47,9 @@ export const Home = () => {
                             <path d="M4.875 19.5293L19.1195 5.2793M19.1195 5.2793H11.448M19.1195 5.2793L19.1196 12.9509" stroke="#374F42" stroke-linecap="round" stroke-linejoin="round" />
                         </svg></a> 
                     </div>
+                    <div className={styles.popular__authorsList}>
+                        <AuthorProfilePage />
+                    </div>           
                 </div>
             </section>
             <section className={styles.top}>
