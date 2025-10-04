@@ -1,16 +1,15 @@
-import { Header } from "../../components/Header/Header";
-import { Footer } from "../../components/Footer/footer";
 import nature from "../../images/nature.jpg";
+import sty from "./CreateArticlePage.module.css";
 
 export const CreateArticlePage = () => {
   return (
-    <section className="createArticle">
-      <h1 className="createArticle__maine-title">Create an article</h1>
-      <h2 className="createArticle__title">Article Title</h2>
-      <p className="createArticle__text">
+    <section className={sty.createArticle}>
+      <h1 className={sty.createArticle__maineTitle}>Create an article</h1>
+      <h2 className={sty.createArticle__title}>Article Title</h2>
+      <p className={sty.createArticle__text}>
         9 tested tips to improve your wellbeing and quality of life
       </p>
-      <p className="createArticle__big-title">
+      <p className={sty.createArticle__bigText}>
         If you are a person who remains busy in work and other matters and pays
         no attention to your health and wellbeing, you must take a break from
         the robotic routine and pick healthy habits. According to a
@@ -89,12 +88,9 @@ export const CreateArticlePage = () => {
         laugh 200 times a day while adults laugh 15 times a day. Staying happy
         and laughing more is essential for a quality life.
       </p>
-      <img
-        className="createArticle__img"
-        src="../../images/nature.jpg"
-        alt="nature"
-      />
-      <button className="createArticle__button" type="submit">
+      <img className={sty.createArticle__img} src={nature} alt="nature" />
+
+      <button className={sty.createArticle__button} type="submit">
         Publish
       </button>
     </section>
