@@ -28,13 +28,32 @@ h1 {
   margin: 0;
 }
 
-.container{
+.container {
   padding: 0 16px;
   outline: red solid 2px;
-  @media screen and (min-width: 768px) {
-    padding: 0 32px;
+  width: 100%;
+}
+
+@media screen and (max-width: 361px) {
+  .container {
+    padding: 0 8px;
+    max-width: 377px;
   }
-  @media screen and (min-width: 1440px) {
-    padding: 0 108px;
+
+}
+
+@media screen and (max-width: 704px) {
+  .container {
+    padding: 0 12px;
+    max-width: 728px;
   }
+
+}
+
+@media screen and (max-width: 1250px) {
+  .container {
+    padding: 0 12px;
+    max-width: 1274px;
+  }
+
 }
