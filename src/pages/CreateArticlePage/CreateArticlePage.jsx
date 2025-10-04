@@ -4,6 +4,7 @@ import sty from "./CreateArticlePage.module.css";
 export const CreateArticlePage = () => {
   return (
     <section className={sty.createArticle}>
+      <div className={sty.createArticle}></div>
       <h1 className={sty.createArticle__maineTitle}>Create an article</h1>
       <h2 className={sty.createArticle__title}>Article Title</h2>
       <p className={sty.createArticle__text}>

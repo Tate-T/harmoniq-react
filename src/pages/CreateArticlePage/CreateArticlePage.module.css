@@ -1,4 +1,6 @@
-
+.createArticle {
+  background: var(--White, #F7FFFB);
+}
 
 .createArticle__maineTitle {
   color: var(--Black, #070721);
@@ -8,6 +10,9 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  display: flex;
+  justify-content: start;
+  margin-bottom: 8px;
 }
 
 .createArticle__title {
@@ -17,6 +22,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  display: flex;
+  justify-content: start;
+  
 }
 
 .createArticle__text {
@@ -26,6 +34,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  border-radius: var(--Interactive-border-radius---radius-i-sm, 8px);
+border: 1px solid var(--Light-Gray, #9F9F9F);
+width: 809px;
 }
 
 .createArticle__bigText {
