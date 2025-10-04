@@ -9,9 +9,9 @@ export const Authors = () => {
         <main>
             <section className={styles.section}>
                 <div className="container authors-container">
-                    <h2 className="authors-title">Authors</h2>
+                    <h2 className={styles.authorsTitle}>Authors</h2>
                     <AuthorsList />
-                    <button className="authors-button">Load More</button>
+                    <button className={styles.authorsButton}>Load More</button>
                 </div>
             </section>
         </main>
