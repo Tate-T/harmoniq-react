@@ -1,0 +1,76 @@
+.articles {
+}
+
+.articles__container {
+}
+
+.articles__content {
+}
+
+.articles__title {
+  
+}
+
+.flower__img {
+  width: 1226px;
+  height: 624px;
+}
+
+.articles__intro {
+}
+
+.articles__list {
+}
+
+.articles__item {
+}
+
+.articles__subtitle {
+  color: var(--Black, #000);
+  /* body/md/Regular */
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 155%; /* 24.8px */
+}
+
+.articles__text {
+  color: var(--Black, #000);
+  /* body/md/Regular */
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 155%; /* 24.8px */
+}
+
+.articles__sidebar {
+}
+
+.articles__aythor {
+}
+
+.articles__date {
+}
+
+.articles__related-title {
+}
+
+.articles__related {
+}
+
+.articles__related-item {
+}
+
+.articles__related-content {
+}
+
+.articles__related-text {
+}
+
+.articles__related-author {
+}
+
+.articles__btn {
+}
