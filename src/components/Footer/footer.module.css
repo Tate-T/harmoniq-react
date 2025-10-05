@@ -1,5 +1,5 @@
 .footer{
-    padding: 24px 0;
+    padding: 24px 108px;
 background: #D1E0D8;
 display: flex;
 justify-content: space-between;
@@ -13,4 +13,10 @@ font-size: 16px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
+}
+
+.links{
+    display: flex;
+    gap: 32px;
+    align-items: center;
 }

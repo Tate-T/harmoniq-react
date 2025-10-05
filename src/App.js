@@ -13,7 +13,6 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <div className='container'>
       <Home />
       <Articles />
       <ArticlesPage />
@@ -23,7 +22,6 @@ function App() {
       <CreateArticlePage />
       <UserProfile />
       <ArticlesList />
-      </div>
     </div>
   );
 }
