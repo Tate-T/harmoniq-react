@@ -59,6 +59,7 @@ export const ArticlesList = () => {
       <Header />
 
       <main className={styles.ArticlePage}>
+        <div className='container'>
         <header className={styles.ArticleHeader}>
           <h1 className={styles.ArticleTitle}>Articles</h1>
           <div className={styles.ArticleBoxes}>
@@ -83,6 +84,7 @@ export const ArticlesList = () => {
         </section>
         <div className={styles.ArticlePagination}>
         <button className={styles.ArticlePaginationButton}><h2 className={styles.ArticlePaginationText}>Load More</h2></button>
+      </div>
       </div>
       </main>
 
