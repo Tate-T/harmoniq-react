@@ -28,6 +28,7 @@
   height: 389px;
 }
 
+
 .info__btns {
   width: 392px;
   height: 57px;
@@ -81,12 +82,14 @@
   gap: 24px;
 } */
 
-
+.about > div {
+  padding-bottom: 72px;
+}
 .about__div {
   display: flex;
   gap: 24px;
   flex-direction: column;
-  margin: 0 0 72px 0;
+  /* margin: 0 0 72px 0; */
 }
 .about__info {
   border-radius: 32px;
