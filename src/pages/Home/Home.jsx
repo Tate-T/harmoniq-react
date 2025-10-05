@@ -78,6 +78,5 @@ export const Home = () => {
             </section>
         </main>
         <Footer />
-        <ArticleCard/>
     </>
 }
