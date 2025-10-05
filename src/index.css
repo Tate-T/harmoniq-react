@@ -32,9 +32,10 @@ h1 {
   padding: 0 16px;
   outline: red solid 2px;
   width: 100%;
+  margin: 0 auto;
 }
 
-@media screen and (max-width: 361px) {
+@media screen and (min-width: 361px) {
   .container {
     padding: 0 8px;
     max-width: 377px;
@@ -42,7 +43,7 @@ h1 {
 
 }
 
-@media screen and (max-width: 704px) {
+@media screen and (min-width: 704px) {
   .container {
     padding: 0 12px;
     max-width: 728px;
@@ -50,10 +51,10 @@ h1 {
 
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (min-width: 1250px) {
   .container {
     padding: 0 12px;
-    max-width: 1274px;
+    max-width: 1248px;
   }
 
 }
