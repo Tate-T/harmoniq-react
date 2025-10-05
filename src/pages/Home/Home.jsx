@@ -6,6 +6,7 @@ import flower from '../../images/flower.png'
 import person from '../../images/person.png'
 import sec1img from '../../images/sec1img.png'
 import {AuthorsList} from '../Authors/components/AuthorsList'
+import ArticleCard from '../../components/ArticlesList/ArticlesList'
 
 
 export const Home = () => {
@@ -62,5 +63,6 @@ export const Home = () => {
             </section>
         </main>
         <Footer />
+        <ArticleCard/>
     </>
 }
