@@ -3,8 +3,6 @@ import { Footer } from "../../components/Footer/footer";
 import "./ArticlesPage.css";
 import nature from '../../images/nature.png';
 
-console.log(nature)
-
 export const ArticlesPage = () => {
   return (
     <>
@@ -91,8 +89,7 @@ export const ArticlesPage = () => {
                     Exercise strengthens bones and muscles and prevents injuries during daily tasks.
                   </p>
                 </li>
-
-                <li>
+<li>
                   <h3>6. Stay Away from Smoking and Alcohol</h3>
                   <p>
                     If you continue drinking or smoking, your health efforts will be wasted.

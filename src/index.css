@@ -28,10 +28,16 @@ h1 {
   margin: 0;
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   padding: 0 16px;
   outline: red solid 2px;
   width: 100%;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 361px) {
@@ -53,7 +59,7 @@ h1 {
 @media screen and (min-width: 1250px) {
   .container {
     padding: 0 12px;
-    max-width: 1274px;
+    max-width: 1248px;
   }
 
 }
