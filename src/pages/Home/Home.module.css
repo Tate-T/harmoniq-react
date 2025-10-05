@@ -1,7 +1,15 @@
-.info {
+/* .info {
   display: flex;
-  align-items: flex-start;
-  margin: 48px 105px 72px 108px;
+  align-items: center;
+  margin: 48px 0 72px 0;
+  justify-content: space-between;
+} */
+
+.info > div {
+  background-image: url('../../images/sec1img.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  padding: 48px 0 245px 0;
 }
 
 .info__title {
@@ -15,10 +23,11 @@
   text-align: left;
 }
 
-.info_wrapper {
+.info__wrapper {
   width: 599px;
   height: 389px;
 }
+
 
 .info__btns {
   width: 392px;
@@ -55,11 +64,32 @@
   color: #374f42;
 }
 
-.about {
-  margin: 0 108px 72px 108px;
+.info__div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* .info__img {
+  height: auto;
+  display: block;
+} */
+
+/* .about {
+  margin: 0 0 72px 0;
   display: flex;
   flex-direction: column;
   gap: 24px;
+} */
+
+.about > div {
+  padding-bottom: 72px;
+}
+.about__div {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  /* margin: 0 0 72px 0; */
 }
 .about__info {
   border-radius: 32px;
@@ -100,10 +130,8 @@
   justify-content: space-between;
 }
 
-
-
 .popular {
-  margin: 0 108px 72px 108px;
+  margin: 0 0 72px 0;
 }
 .popular__title {
   font-family: "Manrope", sans-serif;
@@ -140,10 +168,19 @@
   color: #374f42;
 }
 
+.popular__authorsList > div:nth-child(n + 4) {
+  display: none !important;
+}
 
+.popular__authorsList {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 440px;
+  overflow: hidden;
+}
 
 .top {
-  margin: 0 108px 72px 108px;
+  margin: 0 0 72px 0;
 }
 .top__title {
   font-family: "Manrope", sans-serif;
@@ -186,17 +223,31 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: space-between;
 }
 
 .top__authorsList {
   overflow: hidden;
 }
 
-.top__authorsList ul>li>img {
+.top__authorsList ul > li > img {
   width: 160px;
   height: 160px;
 }
 
-.top__authorsList ul>li {
+.top__authorsList ul > li {
   padding: 12px;
+}
+
+.top__authorsList ul > li:nth-child(n + 7) {
+  display: none !important;
+}
+
+.top__authorsList ul > li > p {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  color: #070721;
+  margin-top: 16px;
 }
