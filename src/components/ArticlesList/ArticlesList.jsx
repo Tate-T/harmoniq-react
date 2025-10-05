@@ -58,10 +58,16 @@ export const ArticlesList = () => {
     <>
       <Header />
 
-      <main className="articles-page">
-        <header className="articles-header">
+      <main className={styles.ArticlePage}>
+        <header className={styles.ArticleHeader}>
           <h1 className={styles.ArticleTitle}>Articles</h1>
+          <div className={styles.ArticleBoxes}>
           <h2 className={styles.ArticleAmount}>96 articles</h2>
+              <select className={styles.ArticleSelect}>
+      <option value="all">All</option>
+      <option value="popular">Popular</option>
+      </select>
+      </div>
         </header>
 
         <section className={styles.ArticlesGrid}>
@@ -75,6 +81,9 @@ export const ArticlesList = () => {
             />
           ))}
         </section>
+        <div className={styles.ArticlePagination}>
+        <button className={styles.ArticlePaginationButton}><h2 className={styles.ArticlePaginationText}>Load More</h2></button>
+      </div>
       </main>
 
       <Footer />
