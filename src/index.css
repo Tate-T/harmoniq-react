@@ -28,6 +28,11 @@ h1 {
   margin: 0;
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   padding: 0 16px;
   outline: red solid 2px;
