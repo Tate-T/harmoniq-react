@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Tate-T/harmoniq-react/static/css/main.a03c8788.css",
+    "main.js": "/Tate-T/harmoniq-react/static/js/main.db6c9ce4.js",
+    "static/media/flower.png": "/Tate-T/harmoniq-react/static/media/flower.de58441411e9c4581b4e.png",
+    "static/media/fam.png": "/Tate-T/harmoniq-react/static/media/fam.981522f4512d46209610.png",
+    "static/media/sec1img.png": "/Tate-T/harmoniq-react/static/media/sec1img.ba1e69764815e23c07bc.png",
+    "static/media/person.png": "/Tate-T/harmoniq-react/static/media/person.abf6c8bb115e2e4960d5.png",
+    "static/media/naomi.png": "/Tate-T/harmoniq-react/static/media/naomi.c8be8fb488d0ef629059.png",
+    "static/media/max.png": "/Tate-T/harmoniq-react/static/media/max.758231e89b4719bef4eb.png",
+    "static/media/emma.png": "/Tate-T/harmoniq-react/static/media/emma.ef4ecddcc6abac9d56ab.png",
+    "static/media/andrii.png": "/Tate-T/harmoniq-react/static/media/andrii.b9cd7085018fe4c81893.png",
+    "static/media/tailor.png": "/Tate-T/harmoniq-react/static/media/tailor.259b869480664ea31261.png",
+    "static/media/tony.png": "/Tate-T/harmoniq-react/static/media/tony.75e47ab6c9715d5ea02a.png",
+    "index.html": "/Tate-T/harmoniq-react/index.html",
+    "static/media/eye-crossed.svg": "/Tate-T/harmoniq-react/static/media/eye-crossed.cb5a0ebcf37de9acfe1247bdafa655e0.svg",
+    "main.a03c8788.css.map": "/Tate-T/harmoniq-react/static/css/main.a03c8788.css.map",
+    "main.db6c9ce4.js.map": "/Tate-T/harmoniq-react/static/js/main.db6c9ce4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a03c8788.css",
+    "static/js/main.db6c9ce4.js"
+  ]
+}
