@@ -1,12 +1,11 @@
 {
   "files": {
-    "main.css": "/harmoniq-react/static/css/main.f62cd5d6.css",
-    "main.js": "/harmoniq-react/static/js/main.a47448d2.js",
-    "static/media/nature.png": "/harmoniq-react/static/media/nature.1c05ab500233c97afdd3.png",
+    "main.css": "/harmoniq-react/static/css/main.16786283.css",
+    "main.js": "/harmoniq-react/static/js/main.e9d6f05b.js",
+    "static/media/flower.png": "/harmoniq-react/static/media/flower.de58441411e9c4581b4e.png",
     "static/media/fam.png": "/harmoniq-react/static/media/fam.981522f4512d46209610.png",
     "static/media/sec1img.png": "/harmoniq-react/static/media/sec1img.ba1e69764815e23c07bc.png",
     "static/media/person.png": "/harmoniq-react/static/media/person.abf6c8bb115e2e4960d5.png",
-    "static/media/flower.png": "/harmoniq-react/static/media/flower.de58441411e9c4581b4e.png",
     "static/media/naomi.png": "/harmoniq-react/static/media/naomi.c8be8fb488d0ef629059.png",
     "static/media/max.png": "/harmoniq-react/static/media/max.758231e89b4719bef4eb.png",
     "static/media/emma.png": "/harmoniq-react/static/media/emma.ef4ecddcc6abac9d56ab.png",
@@ -16,11 +15,11 @@
     "index.html": "/harmoniq-react/index.html",
     "static/media/Icon.svg": "/harmoniq-react/static/media/Icon.718d0e3c8e1ad0a75ca916114ca1aeec.svg",
     "static/media/eye-crossed.svg": "/harmoniq-react/static/media/eye-crossed.cb5a0ebcf37de9acfe1247bdafa655e0.svg",
-    "main.f62cd5d6.css.map": "/harmoniq-react/static/css/main.f62cd5d6.css.map",
-    "main.a47448d2.js.map": "/harmoniq-react/static/js/main.a47448d2.js.map"
+    "main.16786283.css.map": "/harmoniq-react/static/css/main.16786283.css.map",
+    "main.e9d6f05b.js.map": "/harmoniq-react/static/js/main.e9d6f05b.js.map"
   },
   "entrypoints": [
-    "static/css/main.f62cd5d6.css",
-    "static/js/main.a47448d2.js"
+    "static/css/main.16786283.css",
+    "static/js/main.e9d6f05b.js"
   ]
 }
