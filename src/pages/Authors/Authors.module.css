@@ -24,18 +24,21 @@
 .authorsList {
     display: flex;
     flex-wrap: wrap;
-    width: 377px;
+    width: 346px;
     padding: 0;
     justify-content: center;
     gap: 16px;
     align-items: center;
+    padding: 0;
+    margin: 0;
 
 }
 
 .authorsItem {
-    width: 172px;
+    width: 162px;
     height: 221px;
-    padding: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
     outline: solid red;
     
 }
@@ -43,14 +46,16 @@
 .img {
     width: 148px;
     height: 148px;
+    margin-bottom: 20px;
 }
 
 @media screen and (min-width: 704px) {
     .authorsList {
         display: flex;
         flex-wrap: wrap;
-        width: 596px;
-        padding: 0;
+        justify-content: center;
+        align-items: center;
+        width: 680px;
         gap: 24px;
         
     
@@ -73,9 +78,7 @@
     .authorsList {
         display: flex;
         flex-wrap: wrap;
-        width: 1274px;
-        padding: 0;
-        padding-left: 0;
+        width: 1222px;
         gap: 24px;
         justify-content: center;
     
