@@ -1,0 +1,144 @@
+.articles {
+  color: var(--Black, #000);
+  font-family: Manrope;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.articles__container {
+}
+
+.articles__content {
+}
+
+.articles__title {
+}
+
+.flower__img {
+  width: 1226px;
+  height: 624px;
+}
+
+.articles__intro {
+  color: var(--Black, #000);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24.8px; 
+}
+
+.articles__list {
+}
+
+.articles__item {
+}
+
+.articles__subtitle {
+  color: var(--Black, #000);
+
+
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24.8px; 
+}
+
+.articles__text {
+  color: var(--Black, #000);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24.8px;
+}
+
+.articles__sidebar {
+}
+
+.articles__author {
+  color: var(--Black, #070721);
+  font-family: Manrope;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.articles__link {
+  color: var(--Black, #070721);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.articles__date {
+  color: var(--Black, #070721);
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.articles__relatedTitle {
+  color: var(--Black, #070721);
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.articles__related {
+}
+
+.articles__relatedItem {
+}
+
+.articles__relatedContent {
+}
+
+.articles__relatedText {
+  overflow: hidden;
+  color: var(--Black, #070721);
+  text-overflow: ellipsis;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.articles__relatedAuthor {
+  overflow: hidden;
+  color: var(--Black, #070721);
+  text-overflow: ellipsis;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24.8px; 
+}
+
+.articles__btn {
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-4, 16px);
+  align-self: stretch;
+  border-radius: 64px;
+  background: var(--Green, #649179);
+}
