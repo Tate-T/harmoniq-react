@@ -1,10 +1,12 @@
-import nature from "../../images/nature.jpg";
+import nature from "../../images/mini-nature.png";
 import sty from "./CreateArticlePage.module.css";
 
 export const CreateArticlePage = () => {
   return (
     <section className={sty.createArticle}>
       <div className="container">
+        <div className={sty.oneContainer}>
+        <div className={sty.twoContainer}>
         <h1 className={sty.createArticle__maineTitle}>Create an article</h1>
         <h2 className={sty.createArticle__title}>Article Title</h2>
         <div className={sty.createArticle__mincontainer}>
@@ -101,7 +103,9 @@ export const CreateArticlePage = () => {
         <button className={sty.createArticle__button} type="submit">
           Publish
         </button>
+        </div>
         <img className={sty.createArticle__img} src={nature} alt="nature" />
+        </div>
       </div>
     </section>
   );
