@@ -9,11 +9,14 @@ export const CreateArticlePage = () => {
         <div className={sty.twoContainer}>
         <h1 className={sty.createArticle__maineTitle}>Create an article</h1>
         <h2 className={sty.createArticle__title}>Article Title</h2>
+        <div className={sty.createArticle__treeContainer}>
         <div className={sty.createArticle__mincontainer}>
           <p className={sty.createArticle__text}>
             9 tested tips to improve your wellbeing and quality of life
           </p>
         </div>
+         <img className={sty.createArticle__img} src={nature} alt="nature" />
+         </div>
         <div className={sty.createArticle__twoContainer}>
           <p className={sty.createArticle__bigText}>
             If you are a person who remains busy in work and other matters and
@@ -104,7 +107,6 @@ export const CreateArticlePage = () => {
           Publish
         </button>
         </div>
-        <img className={sty.createArticle__img} src={nature} alt="nature" />
         </div>
       </div>
     </section>
