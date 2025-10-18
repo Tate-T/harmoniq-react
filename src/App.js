@@ -7,12 +7,14 @@ import { Authors } from './pages/Authors/Authors';
 import { CreateArticlePage } from './pages/CreateArticlePage/CreateArticlePage';
 import { Home } from './pages/Home/Home';
 import { UserProfile } from './pages/UserProfile/UserProfile';
+import { Header } from './components/Header/Header';
 import './App.css';
 
 
 function App() {
   return (
     <div className="App">
+      {/* <Header /> */}
       <Home />
       <Articles />
       <ArticlesPage />
