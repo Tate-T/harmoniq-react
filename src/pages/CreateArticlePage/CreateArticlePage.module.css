@@ -10,6 +10,17 @@
 
 .createArticle__treeContainer {
   display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  @media screen and (min-width: 704px) {
+   width: 50px;
+   flex-direction: row;
+   margin-bottom: 250px;
+  }
+  @media screen and (min-width: 1250px) {
+    gap: 5px;
+      flex-direction: row;
+  }
 }
 
 .createArticle__maineTitle {
@@ -57,6 +68,7 @@
   padding-left: 12px;
   padding-top: 12px;
   padding-bottom: 12px;
+  
 }
 
 .createArticle__twoContainer {
@@ -102,7 +114,13 @@
 }
 
 .createArticle__img {
-  height: 280px;
+  height: 285px;
   border-radius: 24px;
   padding-left: 24px;
+  @media screen and (min-width: 704px) {
+   height: 268px;
+  }
+  @media screen and (min-width: 1250px) {
+    height: 280px;
+  }
 }
