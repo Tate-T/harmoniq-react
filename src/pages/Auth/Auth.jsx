@@ -5,7 +5,7 @@ import { Login } from "./LoginForm";
 
 
 export const Auth = () => {
-    const isRegistred = false;
+    const isRegistred = true;
     return <>
     <Header/>
     <main>
