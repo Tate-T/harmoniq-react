@@ -13,7 +13,7 @@
 }
 
 .info__title {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 800;
   font-size: 92px;
   line-height: 100%;
@@ -27,7 +27,6 @@
   width: 599px;
   height: 389px;
 }
-
 
 .info__btns {
   width: 392px;
@@ -45,7 +44,7 @@
   background: #649179;
   border: none;
 
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: #f7fffb;
@@ -58,7 +57,7 @@
   width: 184px;
   height: 57px;
 
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: #374f42;
@@ -104,7 +103,7 @@
 }
 
 .about__info--title {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 40px;
   color: #070721;
@@ -112,7 +111,7 @@
 }
 
 .about__info--descr {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 155%;
@@ -134,7 +133,7 @@
   margin: 0 0 72px 0;
 }
 .popular__title {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 40px;
   color: #000;
@@ -142,7 +141,7 @@
 }
 
 .popular__link--text {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 16px;
   color: #374f42;
@@ -183,14 +182,14 @@
   margin: 0 0 72px 0;
 }
 .top__title {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 40px;
   color: #000;
   margin: 0;
 }
 .top__link--text {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 16px;
   color: #374f42;
@@ -237,6 +236,8 @@
 
 .top__authorsList ul > li {
   padding: 12px;
+  width: 184px;
+  height: 233px;
 }
 
 .top__authorsList ul > li:nth-child(n + 7) {
@@ -244,10 +245,18 @@
 }
 
 .top__authorsList ul > li > p {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 24px;
   text-align: center;
   color: #070721;
   margin-top: 16px;
+}
+
+.top__authorsList ul {
+  gap: 24px;
+}
+
+.top__authorsList ul > li > p {
+  margin: 0;
 }

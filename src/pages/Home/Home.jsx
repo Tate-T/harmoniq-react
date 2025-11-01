@@ -5,8 +5,8 @@ import fam from '../../images/fam.png'
 import flower from '../../images/flower.png'
 import person from '../../images/person.png'
 import sec1img from '../../images/sec1img.png'
-import { AuthorsList } from '../Authors/components/AuthorsList'
 import { AuthorProfilePage } from '../AuthorProfilePage/AuthorProfilePage'
+import {AuthorsList} from '../Authors/components/AuthorsList'
 
 
 export const Home = () => {
