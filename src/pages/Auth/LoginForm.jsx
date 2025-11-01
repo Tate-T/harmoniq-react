@@ -1,7 +1,22 @@
 import styles from './Auth.module.css'
 import eye from '../../images/auth/eye-crossed.svg'
-export const Login = () => {
-    return <form className={styles.loginForm}>
+import { Component } from 'react'
+import UserList from './UserList'
+
+export class Login extends Component {
+    state = {
+        email: '',
+        password: ''
+    }
+
+    collectInfo = () => {
+        this.setState((PrevSate) => {
+            return 
+        })
+    }
+
+    render() {
+        return <form className={styles.loginForm}>
             <h2 className={styles.name}>Log in</h2>
             <ul className={styles.list}>
                 <li className={styles.item}>
@@ -17,4 +32,6 @@ export const Login = () => {
             <button className={styles.btn} type="submit">Login</button>
             <p className={styles.sugtestion}>Don’t have an account? <a href="" className={styles.link}>Register</a></p>
         </form>
+    }
+
 }
