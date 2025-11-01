@@ -236,12 +236,12 @@
 
 .top__authorsList ul > li {
   padding: 12px;
-  width: 184px;
-  height: 233px;
+  max-width: 184px;
+  /* height: 233px; */
 }
 
 .top__authorsList ul > li:nth-child(n + 7) {
-  display: none !important;
+  display: none;
 }
 
 .top__authorsList ul > li > p {
@@ -254,9 +254,9 @@
 }
 
 .top__authorsList ul {
-  gap: 24px;
+  gap: 0;
 }
 
-.top__authorsList ul > li > p {
+/* .top__authorsList ul > li > p {
   margin: 0;
-}
+} */

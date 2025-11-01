@@ -7,8 +7,8 @@ import person from '../../images/person.png'
 import sec1img from '../../images/sec1img.png';
 import ArticleCard from '../../components/ArticlesList/ArticlesList';
 import { AuthorProfilePage } from '../AuthorProfilePage/AuthorProfilePage'
-import {AuthorsList} from '../Authors/components/AuthorsList'
-
+import { AuthorsList } from '../Authors/components/AuthorsList'
+import { ArticlesList } from '../AuthorProfilePage/ArticlesList'
 
 export const Home = () => {
     return <>
@@ -56,8 +56,8 @@ export const Home = () => {
                             </svg></a>
                         </div>
                         {/* <div className={styles.popular__authorsList}>
-                        <AuthorProfilePage />
-                    </div>            */}
+                            <ArticlesList />
+                        </div> */}
                     </div>
                 </div>
             </section>
