@@ -1,47 +1,61 @@
-import { Header } from '../../components/Header/Header'
-import { Footer } from '../../components/Footer/footer'
+import { Header } from '../../components/Header/Header';
+import { Footer } from '../../components/Footer/footer';
+import './UserProfile.css';
+import naomi from '../../images/authors/naomi.png';
 
-export const UserProfile = ({imageSrc, imageAlt, userName, articlesAmount, svgLink, articleTitle, articleDescription}) => {
-    const savedArticles = false;
-    const anyArticles = false;
-    return <>
-    <Header/>
-        <main>
-            <section>
-                <h2>My Profile</h2>
-                <img src={imageSrc} alt={imageAlt}/>
-                <p>{userName}</p>
-                <p>{articlesAmount}</p>
-                <ul>
-                    <li>My Articles</li>
-                    <li>Saved Articles</li>
-                </ul>
-                <div>
-                    <svg>
-                        <use href={svgLink}></use>
-                    </svg>
-            {anyArticles === false ? (
-                <h3>Nothing found.</h3>
-            ) : (
-                <h3>{articleTitle}</h3>
-            )}
+export const UserProfile = () => {
+  return (
+    <>
+      <Header />
+      <main className="profile">
+        <h1 className="profile__title">My Profile</h1>
+        <section className="profile__header">
+          <img src={naomi} alt="User avatar" className="profile__avatar" />
+          <div className="profile__info">
+            <h2 className="profile__name">Naomi</h2>
+            <p className="profile__stats">96 articles</p>
+          </div>
+        </section>
 
-            {savedArticles === true && anyArticles === false ? (
-                <p>Save your first article</p>
-            ) : savedArticles === false && anyArticles === false ? (
-                <p>Write your first article</p>
-            ) : (
-                <p>{articleDescription}</p>
-            )}
+        <nav className="profile__tabs">
+          <button className="profile__tab profile__tab--active">
+            My Articles
+          </button>
+          <button className="profile__tab">Saved Articles</button>
+        </nav>
 
-            {savedArticles === true ? (
-                <button type="button">Go to articles</button>
-            ) : (
-                <button type="button">Create an article</button>
-            )}
-                </div>
-            </section>
-        </main>
-    <Footer/>
+        <section className="profile__articles">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <article key={i} className="article-card">
+              <img
+                src={``}
+                alt="Article"
+                className="article-card__image"
+              />
+              <div className="article-card__content">
+                <p className="article-card__author">Clark</p>
+                <h3 className="article-card__title">
+                  When Anxiety Feels Like a Room With No Doors
+                </h3>
+                <p className="article-card__text">
+                  10 advices how meditations can help you feeling better
+                </p>
+                <button className="article-card__button">
+                  Learn more
+                  <svg className="article-card__icon" width="16" height="16">
+                    <use href="#icon-arrow" />
+                  </svg>
+                </button>
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <div className="profile__load-more">
+          <button className="profile__load-button">Load More</button>
+        </div>
+      </main>
+      <Footer />
     </>
-}
+  );
+};
