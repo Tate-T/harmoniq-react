@@ -4,7 +4,8 @@ import styles from './Home.module.css'
 import fam from '../../images/fam.png'
 import flower from '../../images/flower.png'
 import person from '../../images/person.png'
-import sec1img from '../../images/sec1img.png'
+import sec1img from '../../images/sec1img.png';
+import ArticleCard from '../../components/ArticlesList/ArticlesList';
 import { AuthorProfilePage } from '../AuthorProfilePage/AuthorProfilePage'
 import {AuthorsList} from '../Authors/components/AuthorsList'
 

@@ -2,7 +2,7 @@
   "name": "harmoniq-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Tate-T/harmoniq-react",
+  "homepage": "https://tate-t.github.io/harmoniq-react/",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
@@ -11,6 +11,7 @@
     "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
