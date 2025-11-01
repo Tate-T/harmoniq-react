@@ -11,11 +11,12 @@ export const ArticlesPage = () => {
         <section className={styles.articles}>
           <div className={styles.articles__container}>
             <div className={styles.articles__content}>
-              <h1 className={styles.articles__title}>
-                9 tested tips to improve your wellbeing and quality of life
-              </h1>
-
-              <img className={styles.flower__img} src={flower} alt="flower" />
+              <div className={styles.articles__title__img}>
+                <h1 className={styles.articles__title}>
+                  9 tested tips to improve your wellbeing and quality of life
+                </h1>
+                <img className={styles.flower__img} src={flower} alt="flower" />
+              </div>
 
               <p className={styles.articles__intro}>
                 If you are a person who remains busy in work and other matters and pays no attention to your health and wellbeing, you must take a break from the robotic routine and pick healthy habits.
