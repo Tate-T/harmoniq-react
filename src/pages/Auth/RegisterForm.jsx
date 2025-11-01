@@ -1,7 +1,22 @@
 import styles from './Auth.module.css'
 import eye from '../../images/auth/eye-crossed.svg'
-export const Register = () => {
-    return <form className={styles.registerForm}>
+import { Component } from 'react'
+
+export class Register extends Component {
+    state = {
+        username: '',
+        email: '',
+        password: ''
+    }
+
+    infoCollect = () => {
+        this.setState((PrevSate) => {
+            return 
+        })
+    }
+    
+    render() {
+        return <form className={styles.registerForm}>
             <h2 className={styles.name}>Register</h2>
             <p className={styles.p}>Join our community of mindfulness and wellbeing!</p>
             <ul className={styles.list}>
@@ -27,4 +42,5 @@ export const Register = () => {
             <button className={styles.btn} type="submit">Create account</button>
             <p className={styles.sugtestion}>Already have an account? <a href="" className={styles.link}>Log in</a></p>
         </form>
+    }
 }
