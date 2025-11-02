@@ -10,7 +10,7 @@ import { AuthorsList } from '../Authors/components/AuthorsList'
 import { AuthorProfilePage } from '../AuthorProfilePage/AuthorProfilePage'
 
 
-export const Home = () => {
+export const Home = ({users}) => {
     return <>
         <Header />
         <main>
@@ -73,7 +73,7 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className={styles.top__authorsList}>
-                        <AuthorsList />
+                        <AuthorsList users={users}/>
                     </div>
                 </div>
             </section>
