@@ -3,7 +3,7 @@ import { Articles } from './pages/Articles/Articles';
 import { ArticlesPage } from './pages/ArticlesPage/ArticlesPage';
 import { Auth } from './pages/Auth/Auth';
 import { AuthorProfilePage } from './pages/AuthorProfilePage/AuthorProfilePage';
-import { Authors } from './pages/Authors/Authors';
+import Authors from './pages/Authors/Authors';
 import { CreateArticlePage } from './pages/CreateArticlePage/CreateArticlePage';
 import { Home } from './pages/Home/Home';
 import { UserProfile } from './pages/UserProfile/UserProfile';
@@ -39,8 +39,8 @@ export default class App extends Component {
     };
 
     render () {
-      <div className="App">
-        <Home />
+      return <div className="App">
+        <Home users={this.state.users}/>
         <Articles />
         <ArticlesPage />
         <Auth users={this.state.users}/>
