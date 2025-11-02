@@ -1,20 +1,16 @@
 .profile {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px 80px;
-  font-family: 'Inter', sans-serif;
-  color: #1b1b1b;
+  padding-top: 46px;
+  padding-bottom: 46px;
 }
-
-/* Заголовок */
 .profile__title {
+  font-family: 'Manrope', sans-serif;
   display: flex;
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 32px;
+  text-align: center;
   margin-bottom: 24px;
 }
 
-/* Верхня секція профілю */
 .profile__header {
   display: flex;
   align-items: center;
@@ -30,8 +26,10 @@
 }
 
 .profile__info {
-  display: flex;
-  flex-direction: column;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #000;
 }
 
 .profile__name {
@@ -43,13 +41,13 @@
 .profile__stats {
   color: black;
   font-size: 0.9rem;
-  font-family: "Manrope", sans-serif;;
+  font-family: 'Manrope', sans-serif;
 }
 
-/* Вкладки */
+
 .profile__tabs {
   display: flex;
-  gap: 20px;
+  gap: 38px;
   margin-bottom: 40px;
 }
 
@@ -64,21 +62,25 @@
 }
 
 .profile__tab--active {
-  color: #111;
+  font-weight: 700;
+  font-size: 16px;
+  color: #374f42;
   border-color: #111;
 }
 
-/* Картки статей */
+
 .profile__articles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 24px;
 }
 
-/* Одна картка */
 .article-card {
-  background-color: #dfe8e1;
-  border-radius: 16px;
+  width: 392px;
+  height: 492px;
+  border-radius: 32px;
+  padding: 12px;
+  background-color: #d1e0d8;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -86,54 +88,50 @@
 }
 
 .article-card__image {
-  width: 100%;
-  height: 190px;
+  width: 368px;
+  height: 233px;
   object-fit: cover;
+  border-radius: 24px;
+  margin-bottom: 12px;
 }
 
 .article-card__content {
-  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  text-align: left;
 }
 
 .article-card__author {
-  color: #333;
-  font-size: 0.85rem;
-  font-weight: 500;
+  --font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #070721;
 }
 
 .article-card__title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-  color: #1a1a1a;
+  --font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #070721;
 }
 
 .article-card__text {
-  font-size: 0.9rem;
-  color: #444;
+  --font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 155%;
+  color: #070721;
 }
 
-/* Кнопка Learn More */
 .article-card__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 64px;
+  padding: 8px;
+  width: 320px;
+  height: 40px;
   background-color: #e4ece5;
-  border: 1px solid #b8c4b9;
-  border-radius: 12px;
-  padding: 10px 0;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #1b1b1b;
-  margin-top: 10px;
+  border: 1px solid #374f42;
   cursor: pointer;
-}
-
-.article-card__button:hover {
-  background-color: #e4ece5; /* без ефекту hover */
+  margin-top: 12px;
 }
 
 .article-card__icon {
@@ -141,6 +139,35 @@
   fill: none;
   stroke: #1b1b1b;
   stroke-width: 1.5;
+}
+
+.article-card__buttons {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.article-card__small-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #374f42;
+  background-color: #e4ece5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.article-card__small-button svg {
+  stroke: #1b1b1b;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.article-card__small-button:hover {
+  background-color: #d1e0d8;
 }
 
 .profile__load-more {
