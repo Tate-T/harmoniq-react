@@ -2,6 +2,8 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/footer";
 import styles from './ArticlesList.module.css';
 import Icon from './Icon.svg';
+import { Component } from "react";
+import articles from "../../harmoniq.articles.json";
 
 
 
@@ -22,38 +24,30 @@ const ArticleCard = ({ title, description, image, name }) => {
   );
 };
 
-export const ArticlesList = () => {
-  const articles = [
-    {
-      id: 1,
-      title: "Title",
-      name: "Carpathians",
-      description: "mountains.",
-      image: "https://media.walldeco.ua/wp-content/uploads/20241105031221/w02074p-900x600.jpg",
-    },
-     {
-      id: 1,
-      title: "Title",
-      name: "Carpathians",
-      description: "mountains.",
-      image: "https://media.walldeco.ua/wp-content/uploads/20241105031221/w02074p-900x600.jpg",
-    },
-     {
-      id: 1,
-      title: "Title",
-      name: "Carpathians",
-      description: "mountains.",
-      image: "https://media.walldeco.ua/wp-content/uploads/20241105031221/w02074p-900x600.jpg",
-    },
-     {
-      id: 1,
-      title: "Title",
-      name: "Carpathians",
-      description: "mountains.",
-      image: "https://media.walldeco.ua/wp-content/uploads/20241105031221/w02074p-900x600.jpg",
-    }
-  ];
+export class ArticlesList extends Component {
+  state = {
+    visibleCount: 10,
+    favoriteArticles: [],
+    filter: "all"
+  }
 
+  loadMore = () => {
+    this.setState(prev => ({
+      visibleCount: prev.visibleCount + 10
+    }));
+  }
+
+  favorited = (id) => {
+this.setState((prevState) => {
+  const isPostFavorite = prevState.favoriteArticles.includes(id);
+  const favoritePosts = isPostFavorite ? prevState.favoriteArticles.filter((favId) => favId !== id) : [...prevState.favoriteArticles, id];
+  return { favoriteArticles: favoritePosts };
+})
+  }
+
+render() {
+  const articlesItems = articles.slice(0, this.state.visibleCount)
+  const filteredFavoritedArticles = this.state.filter === "favoriteArticles" ? articles.filter((article) => this.state.favoriteArticles.includes(article.id)) : articles;
   return (
     <>
       <Header />
@@ -63,27 +57,28 @@ export const ArticlesList = () => {
         <header className={styles.ArticleHeader}>
           <h1 className={styles.ArticleTitle}>Articles</h1>
           <div className={styles.ArticleBoxes}>
-          <h2 className={styles.ArticleAmount}>96 articles</h2>
+          <h2 className={styles.ArticleAmount}>{articlesItems.length} articles</h2>
               <select className={styles.ArticleSelect}>
-      <option value="all">All</option>
+      <option value="all" >All</option>
       <option value="popular">Popular</option>
+      <option value="favorite">Favorite</option>
       </select>
       </div>
         </header>
 
         <section className={styles.ArticlesGrid}>
-          {articles.map((article) => (
+          {articlesItems.map((item) => (
             <ArticleCard
-              key={article.id}
-              title={article.title}
-              description={article.description}
-              image={article.image}
-              name={article.name}
+              key={item.id}
+              title={item.title}
+              description={item.description}
+              image={item.img}
+              name={item.name}
             />
           ))}
         </section>
         <div className={styles.ArticlePagination}>
-        <button className={styles.ArticlePaginationButton}><h2 className={styles.ArticlePaginationText}>Load More</h2></button>
+        <button onClick={this.loadMore} className={styles.ArticlePaginationButton}><h2 className={styles.ArticlePaginationText}>Load More</h2></button>
       </div>
       </div>
       </main>
@@ -91,6 +86,5 @@ export const ArticlesList = () => {
       <Footer />
     </>
   );
+}
 };
-
-export default ArticlesList;
