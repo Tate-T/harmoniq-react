@@ -55,9 +55,9 @@ export const Home = () => {
                                 <path d="M4.875 19.5293L19.1195 5.2793M19.1195 5.2793H11.448M19.1195 5.2793L19.1196 12.9509" stroke="#374F42" stroke-linecap="round" stroke-linejoin="round" />
                             </svg></a>
                         </div>
-                        {/* <div className={styles.popular__authorsList}>
-                            <ArticlesList />
-                        </div> */}
+                        <div className={styles.popular__authorsList}>
+                            {/* <ArticlesList /> */}
+                        </div>
                     </div>
                 </div>
             </section>
