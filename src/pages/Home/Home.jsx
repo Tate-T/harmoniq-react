@@ -6,9 +6,9 @@ import flower from '../../images/flower.png'
 import person from '../../images/person.png'
 import sec1img from '../../images/sec1img.png';
 import ArticleCard from '../../components/ArticlesList/ArticlesList';
-import { AuthorsList } from '../Authors/components/AuthorsList'
 import { AuthorProfilePage } from '../AuthorProfilePage/AuthorProfilePage'
-
+import { AuthorsList } from '../Authors/components/AuthorsList'
+import { ArticlesList } from '../AuthorProfilePage/ArticlesList'
 
 export const Home = ({users}) => {
     return <>
@@ -55,9 +55,9 @@ export const Home = ({users}) => {
                                 <path d="M4.875 19.5293L19.1195 5.2793M19.1195 5.2793H11.448M19.1195 5.2793L19.1196 12.9509" stroke="#374F42" stroke-linecap="round" stroke-linejoin="round" />
                             </svg></a>
                         </div>
-                        {/* <div className={styles.popular__authorsList}>
-                        <AuthorProfilePage />
-                    </div>            */}
+                        <div className={styles.popular__authorsList}>
+                            {/* <ArticlesList /> */}
+                        </div>
                     </div>
                 </div>
             </section>
