@@ -237,7 +237,6 @@
 .top__authorsList ul > li {
   padding: 12px;
   max-width: 184px;
-  /* height: 233px; */
 }
 
 .top__authorsList ul > li:nth-child(n + 7) {
@@ -257,6 +256,25 @@
   gap: 0;
 }
 
-/* .top__authorsList ul > li > p {
-  margin: 0;
-} */
+.popular__authorsList {
+  justify-content: center;
+}
+.popular__authorsList > div {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.popular__authorsList > div > div:nth-child(n + 4) {
+  display: none;
+}
+
+.popular__authorsList > div > div {
+  width: 392px;
+}
+
+.popular__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}

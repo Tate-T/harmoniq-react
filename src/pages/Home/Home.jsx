@@ -9,8 +9,9 @@ import ArticleCard from '../../components/ArticlesList/ArticlesList';
 import { AuthorProfilePage } from '../AuthorProfilePage/AuthorProfilePage'
 import { AuthorsList } from '../Authors/components/AuthorsList'
 import { ArticlesList } from '../AuthorProfilePage/ArticlesList'
+import articles from '../../harmoniq.articles.json'
 
-export const Home = ({users}) => {
+export const Home = ({ users }) => {
     return <>
         <Header />
         <main>
@@ -50,14 +51,13 @@ export const Home = ({users}) => {
                     <div className={styles.popular__wrapper}>
                         <h2 className={styles.popular__title}>Popular Articles</h2>
                         <div className={styles.popular__link}>
-                            <p className={styles['popular__link--text']}><a className={styles.popular__a} href='#' target='_blank' rel="noreferrer">Go to all Articles</a></p>
-                            <a className={styles.popular__svg} href='#' target='_blank' rel="noreferrer"> <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <p className={styles['popular__link--text']}><a className={styles.popular__a} href='#' target='_blank' rel="noreferrer">Go to all Articles</a></p> <a className={styles.popular__svg} href='#' target='_blank' rel="noreferrer"> <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.875 19.5293L19.1195 5.2793M19.1195 5.2793H11.448M19.1195 5.2793L19.1196 12.9509" stroke="#374F42" stroke-linecap="round" stroke-linejoin="round" />
                             </svg></a>
                         </div>
-                        <div className={styles.popular__authorsList}>
-                            {/* <ArticlesList /> */}
-                        </div>
+                    </div>
+                    <div className={styles.popular__authorsList}>
+                        <ArticlesList articles={articles} />
                     </div>
                 </div>
             </section>
@@ -73,7 +73,7 @@ export const Home = ({users}) => {
                         </div>
                     </div>
                     <div className={styles.top__authorsList}>
-                        <AuthorsList users={users}/>
+                        <AuthorsList users={users} />
                     </div>
                 </div>
             </section>
