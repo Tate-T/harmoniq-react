@@ -9,13 +9,19 @@ export default class Auth extends Component {
   state = {
     users: this.props.users
   };
+
+   infoCollectorFromSon = (data) => {
+        this.props.onSendData(data)
+   }
+
     render() {
+        console.log(this.props.onSendData);
         const isRegistred = true
         return (
             <>
                 <Header />
                 <main>
-                    {isRegistred === false ? <Login /> : <Register  users={this.state.users}/>}
+                    {isRegistred === false ? <Login /> : <Register  users={this.state.users} onSendData={this.infoCollectorFromSon}/>}
                 </main>
                 <Footer />
             </>
