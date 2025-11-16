@@ -13,25 +13,29 @@ export class Register extends Component {
   
 
   collectInfo = event => {
-    const message = this.state.users.includes((user)=>{
-        if (user.email === this.state.email){ 
-           console.log("User with this email already exists");
+    event.preventDefault();
+
+      this.setState({
+    username: event.target.elements.username.value,
+    email: event.target.elements.email.value,
+    password: event.target.elements.password.value 
+  }, () => {
+            const message = this.state.users.map((user)=>{
+        if (user.email === this.state.email && user.password === this.state.password && user.name === this.state.username) { 
+        return alert("User like this already exists, would you like to log in?");
         } else {
-            console.log(user);
+          // console.log("Registration successful! You can now log in.");
+         return [this.state.username, this.state.email, this.state.password, true];
         }
     })
-    event.preventDefault();
-    this.setState(
-      {
-        email: event.target.elements.email.value,
-        password: event.target.elements.password.value,
-        username: event.target.elements.username.value,
-      }
-    );
+        this.props.onSendData(message[0]);
+        
+  }
+    )
+    ;
         event.target.elements.email.value = '';
     event.target.elements.password.value = '';
     event.target.elements.username.value = '';
-    console.log(message);
   };
 
 

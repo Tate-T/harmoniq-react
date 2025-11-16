@@ -35,15 +35,36 @@ export default class App extends Component {
       { _id: "6881563901add19ee16fd002", name: "Олександра Ткаченко", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fd002.webp", articlesAmount: 12, email: "oleksandra.tkachenko@example.com", password: "ole963", login: false, favorites: [] },
       { _id: "6881563901add19ee16fd003", name: "Дарина Лисенко", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fd003.webp", articlesAmount: 10, email: "daryna.lysenko@example.com", password: "dar357", login: false, favorites: [] },
       { _id: "6881563901add19ee16fd004", name: "Єва Шевченко", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fd004.webp", articlesAmount: 8, email: "yeva.shevchenko@example.com", password: "eva147", login: false, favorites: [] }
-      ] 
+      ]
     };
+userCreator = (data) => {
+  console.log(this.state.users);
+
+  this.setState(prevState => ({
+    users: [
+      ...prevState.users,
+      {
+        _id: (prevState.users.length + 1).toString().padStart(12, '0'),
+        name: data[0],
+        avatarUrl:
+          "https://ftp.goit.study/img/harmoniq/users/default-user.webp",
+        articlesAmount: 0,
+        email: data[1],
+        password: data[2],
+        login: data[3],
+        favorites: []
+      }
+    ]
+  }));
+};
+
 
     render () {
       return <div className="App">
         <Home users={this.state.users}/>
         <Articles />
         <ArticlesPage />
-        <Auth users={this.state.users}/>
+        <Auth users={this.state.users} onSendData={this.userCreator}/>
         <AuthorProfilePage />
         <Authors users={this.state.users}/>
         <CreateArticlePage />
