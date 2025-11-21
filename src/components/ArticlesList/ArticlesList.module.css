@@ -284,3 +284,12 @@ line-height: normal;
     font-size: 16px;
   }
 }
+
+.IconActive{
+    display: flex;
+padding: 8px;
+justify-content: center;
+align-items: center;
+
+}
+
