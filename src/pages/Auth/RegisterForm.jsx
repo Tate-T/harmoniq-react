@@ -3,37 +3,40 @@ import eye from '../../images/auth/eye-crossed.svg';
 import { Component } from 'react';
 import { useState } from 'react';
 
-const Register = () => {
+const Register = ({users}) => {
   // state = {
   //   username: '',
   //   email: '',
   //   password: '',
   //   users: this.props.users
   // };
-  
-  
+  const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [users, setUsers] = useState(users)
 
-  collectInfo = event => {
+
+  const collectInfo = event => {
     event.preventDefault();
 
-      this.setState({
-    username: event.target.elements.username.value,
-    email: event.target.elements.email.value,
-    password: event.target.elements.password.value 
-  }, () => {
-            const message = this.state.users.map((user)=>{
-        if (user.email === this.state.email && user.password === this.state.password && user.name === this.state.username) { 
-        return alert("User like this already exists, would you like to log in?");
-        } else {
-          // console.log("Registration successful! You can now log in.");
-         return [this.state.username, this.state.email, this.state.password, true];
-        }
-    })
-        this.props.onSendData(message[0]);
+  //     this.setState({
+  //   username: event.target.elements.username.value,
+  //   email: event.target.elements.email.value,
+  //   password: event.target.elements.password.value 
+  // }, () => {
+  //           const message = this.state.users.map((user)=>{
+  //       if (user.email === this.state.email && user.password === this.state.password && user.name === this.state.username) { 
+  //       return alert("User like this already exists, would you like to log in?");
+  //       } else {
+  //         // console.log("Registration successful! You can now log in.");
+  //        return [this.state.username, this.state.email, this.state.password, true];
+  //       }
+  //   })
+  //       this.props.onSendData(message[0]);
         
-  }
-    )
-    ;
+  // }
+  //   )
+    // ;
         event.target.elements.email.value = '';
     event.target.elements.password.value = '';
     event.target.elements.username.value = '';
@@ -43,7 +46,7 @@ const Register = () => {
 
 
     return (
-      <form className={styles.registerForm} onSubmit={this.collectInfo}>
+      <form className={styles.registerForm} onSubmit={collectInfo}>
         <h2 className={styles.name}>Register</h2>
         <p className={styles.p}>
           Join our community of mindfulness and wellbeing!
