@@ -64,7 +64,7 @@ userCreator = (data) => {
         <Home users={this.state.users}/>
         <Articles />
         <ArticlesPage />
-        <Auth users={this.state.users} onSendData={this.userCreator}/>
+        <Auth currentUsers={this.state.users} onSendData={this.userCreator}/>
         <AuthorProfilePage />
         <Authors users={this.state.users}/>
         <CreateArticlePage />
