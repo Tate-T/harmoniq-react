@@ -3,7 +3,7 @@ import eye from '../../images/auth/eye-crossed.svg';
 import { Component } from 'react';
 import { useState } from 'react';
 
-const Register = ({users}) => {
+export const Register = ({currentUsers, onSendData, modal}) => {
   // state = {
   //   username: '',
   //   email: '',
@@ -13,12 +13,28 @@ const Register = ({users}) => {
   const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [users, setUsers] = useState(users)
+  const [users, setUsers] = useState(currentUsers)
 
 
   const collectInfo = event => {
     event.preventDefault();
+    if(event.target.elements.validation.value !== event.target.elements.password.value){
+      return modal("Паролі не одинакові. Прошу повторити спробую", "ok")
+    } else {
+    setUsername(event.target.elements.username.value)
+    setEmail(event.target.elements.email.value)
+    setPassword(event.target.elements.password.value)
+    const message = users.map((user) => {
+      if (user.email === email && user.password === password && user.name === username) { 
+      return modal("User like this already exists, would you like to log in?", "log in");
+      } else {
+        modal("Registration successful! You can now log in.", "ok");
+        return [username, email, password, true];
+      }
 
+      onSendData(message[0]);
+    
+    })
   //     this.setState({
   //   username: event.target.elements.username.value,
   //   email: event.target.elements.email.value,
@@ -40,6 +56,8 @@ const Register = ({users}) => {
         event.target.elements.email.value = '';
     event.target.elements.password.value = '';
     event.target.elements.username.value = '';
+    event.target.elements.validation.value = '';
+    }
   };
 
 
@@ -74,7 +92,7 @@ const Register = ({users}) => {
           </li>
           <li className={styles.item}>
             <p className={styles.label}>Repeat your password</p>
-            <input type="password" className={styles.input} placeholder="*****" />
+            <input type="password" className={styles.input} placeholder="*****" name="validation"/>
             <img src={eye} alt="" className={styles.eye} />
           </li>
         </ul>
