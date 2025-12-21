@@ -1,25 +1,32 @@
 {
   "files": {
-    "main.css": "/harmoniq-react/static/css/main.16786283.css",
-    "main.js": "/harmoniq-react/static/js/main.e9d6f05b.js",
+    "main.css": "/harmoniq-react/static/css/main.d86ff298.css",
+    "main.js": "/harmoniq-react/static/js/main.d3bb42f4.js",
     "static/media/flower.png": "/harmoniq-react/static/media/flower.de58441411e9c4581b4e.png",
     "static/media/fam.png": "/harmoniq-react/static/media/fam.981522f4512d46209610.png",
     "static/media/sec1img.png": "/harmoniq-react/static/media/sec1img.ba1e69764815e23c07bc.png",
     "static/media/person.png": "/harmoniq-react/static/media/person.abf6c8bb115e2e4960d5.png",
+    "static/media/userprofileimg3.png": "/harmoniq-react/static/media/userprofileimg3.d7de3a045f407e69d340.png",
+    "static/media/userprofileimg7.png": "/harmoniq-react/static/media/userprofileimg7.cd0fe127dda56d1e0e31.png",
+    "static/media/userprofileimg1.png": "/harmoniq-react/static/media/userprofileimg1.bdac8e8fde3ad87660ef.png",
+    "static/media/userprofileimg10.png": "/harmoniq-react/static/media/userprofileimg10.98bb2f4d53fff5c55f77.png",
+    "static/media/mini-nature.png": "/harmoniq-react/static/media/mini-nature.295de4df5d316d3a8f39.png",
+    "static/media/userprofileimg6.png": "/harmoniq-react/static/media/userprofileimg6.fb99febc912052928e2b.png",
+    "static/media/userprofileimg9.png": "/harmoniq-react/static/media/userprofileimg9.da3561a75ef9d8b039d5.png",
+    "static/media/userprofileimg11.png": "/harmoniq-react/static/media/userprofileimg11.4d3481ccb4136ccafc6a.png",
+    "static/media/userprofileimg8.png": "/harmoniq-react/static/media/userprofileimg8.1a6d2345c0703ee52e9a.png",
+    "static/media/userprofileimg5.png": "/harmoniq-react/static/media/userprofileimg5.bc77d25ec30efeff3441.png",
     "static/media/naomi.png": "/harmoniq-react/static/media/naomi.c8be8fb488d0ef629059.png",
-    "static/media/max.png": "/harmoniq-react/static/media/max.758231e89b4719bef4eb.png",
-    "static/media/emma.png": "/harmoniq-react/static/media/emma.ef4ecddcc6abac9d56ab.png",
-    "static/media/andrii.png": "/harmoniq-react/static/media/andrii.b9cd7085018fe4c81893.png",
-    "static/media/tailor.png": "/harmoniq-react/static/media/tailor.259b869480664ea31261.png",
-    "static/media/tony.png": "/harmoniq-react/static/media/tony.75e47ab6c9715d5ea02a.png",
+    "static/media/userprofileimg12.png": "/harmoniq-react/static/media/userprofileimg12.f90e3bdfec0eec5a4a1f.png",
+    "static/media/userprofileimg4.png": "/harmoniq-react/static/media/userprofileimg4.17bf13c2a39ab0c8736c.png",
+    "static/media/userprofileimg2.png": "/harmoniq-react/static/media/userprofileimg2.c44856d1392d12449b9b.png",
     "index.html": "/harmoniq-react/index.html",
-    "static/media/Icon.svg": "/harmoniq-react/static/media/Icon.718d0e3c8e1ad0a75ca916114ca1aeec.svg",
-    "static/media/eye-crossed.svg": "/harmoniq-react/static/media/eye-crossed.cb5a0ebcf37de9acfe1247bdafa655e0.svg",
-    "main.16786283.css.map": "/harmoniq-react/static/css/main.16786283.css.map",
-    "main.e9d6f05b.js.map": "/harmoniq-react/static/js/main.e9d6f05b.js.map"
+    "static/media/eye-crossed.svg": "/harmoniq-react/static/media/eye-crossed.0b6fe542406d9bd93f387ff9e1b3ca25.svg",
+    "main.d86ff298.css.map": "/harmoniq-react/static/css/main.d86ff298.css.map",
+    "main.d3bb42f4.js.map": "/harmoniq-react/static/js/main.d3bb42f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.16786283.css",
-    "static/js/main.e9d6f05b.js"
+    "static/css/main.d86ff298.css",
+    "static/js/main.d3bb42f4.js"
   ]
 }
