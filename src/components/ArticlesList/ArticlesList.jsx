@@ -1,7 +1,6 @@
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/footer';
 import styles from './ArticlesList.module.css';
-import articles from '../../harmoniq.articles.json';
 import { useEffect, useState } from 'react';
 import { ArticleModal } from './ArticleModal';
 
@@ -49,7 +48,7 @@ const ArticleCard = ({
   );
 };
 
-export function ArticlesList() {
+export function ArticlesList({articles}) {
   const [data, setData] = useState({
     visibleCount: 10,
     favoriteArticles: [],

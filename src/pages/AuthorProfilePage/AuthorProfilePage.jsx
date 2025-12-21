@@ -1,10 +1,9 @@
 
 import React from "react";
 import x from "./AuthorProfilePage.module.css";
-import { articles } from "./articlesData"; 
 import { ArticlesList } from "./ArticlesList";
 
-export function AuthorProfilePage() {
+export function AuthorProfilePage({articles}) {
   return (
     <div className="container">
       <div className={x.app}>

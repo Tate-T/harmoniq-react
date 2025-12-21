@@ -1,5 +1,4 @@
 import { ArticlesList } from './components/ArticlesList/ArticlesList';
-import { Articles } from './pages/Articles/Articles';
 import { ArticlesPage } from './pages/ArticlesPage/ArticlesPage';
 import  Auth  from './pages/Auth/Auth';
 import { AuthorProfilePage } from './pages/AuthorProfilePage/AuthorProfilePage';
@@ -9,6 +8,7 @@ import { Home } from './pages/Home/Home';
 import { UserProfile } from './pages/UserProfile/UserProfile';
 import './App.css';
 import { Component } from 'react';
+import axios from 'axios'
 
 
   
@@ -35,8 +35,21 @@ export default class App extends Component {
       { _id: "6881563901add19ee16fd002", name: "Олександра Ткаченко", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fd002.webp", articlesAmount: 12, email: "oleksandra.tkachenko@example.com", password: "ole963", login: false, favorites: [] },
       { _id: "6881563901add19ee16fd003", name: "Дарина Лисенко", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fd003.webp", articlesAmount: 10, email: "daryna.lysenko@example.com", password: "dar357", login: false, favorites: [] },
       { _id: "6881563901add19ee16fd004", name: "Єва Шевченко", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fd004.webp", articlesAmount: 8, email: "yeva.shevchenko@example.com", password: "eva147", login: false, favorites: [] }
-      ]
+      ],
+    articles: []
     };
+
+    fetchArticles = () => {
+      axios.get('https://69481e8d1ee66d04a44ebf1c.mockapi.io/articles/articles')
+       .then(response => {
+            this.setState({ articles: response.articles }); 
+            console.log(response.articles)
+        })
+        .catch(error => {
+            console.error("API ERROR:", error.response);
+        })
+    }
+
 userCreator = (data) => {
   console.log(this.state.users);
 
@@ -62,15 +75,18 @@ userCreator = (data) => {
     render () {
       return <div className="App">
         <Home users={this.state.users}/>
-        <Articles />
         <ArticlesPage />
         <Auth currentUsers={this.state.users} onSendData={this.userCreator}/>
-        <AuthorProfilePage />
+        <AuthorProfilePage articles={this.state.articles}/>
         <Authors users={this.state.users}/>
         <CreateArticlePage />
         <UserProfile />
-        <ArticlesList />
+        <ArticlesList articles={this.state.articles}/>
       </div>
+    }
+
+    componentDidMount() {
+      this.fetchArticles()
     }
 }
 
