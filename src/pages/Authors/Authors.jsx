@@ -2,22 +2,21 @@ import { Header } from '../../components/Header/Header'
 import { Footer } from '../../components/Footer/footer'
 import { AuthorsList } from './components/AuthorsList'
 import styles from './Authors.module.css'
-import { Component } from 'react'
+import { useState } from 'react';
 
 
 
-export default class Authors extends Component {
-  state = { visibleCount: 8 };
+export const Authors = ({users}) => {
+  const [count, setCount] = useState(8)
 
-  loadMore = () => {
-    this.setState(prev => ({ visibleCount: prev.visibleCount + 8 }));
+
+  const loadMore = () => {
+    setCount(count + 8)
   };
 
-  render() {
-    const { users } = this.props;
-    const visibleUsers = users.slice(0, this.state.visibleCount);
+  const visibleUsers = users.slice(0, count);
 
-    return (
+  return (
         <>
             <Header />
             <main>
@@ -25,8 +24,8 @@ export default class Authors extends Component {
                     <div className="container authors-container">
                         <h2 className={styles.authorsTitle}>Authors</h2>
                         <AuthorsList users={visibleUsers} />
-                        {this.state.visibleCount < users.length && (
-                        <button className={styles.authorsButton} onClick={this.loadMore}>Load More</button>
+                        {count < users.length && (
+                        <button className={styles.authorsButton} onClick={loadMore}>Load More</button>
                         )}
                     </div>
                 </section>
@@ -34,5 +33,4 @@ export default class Authors extends Component {
             <Footer />
         </>
     );
-  }
 }
