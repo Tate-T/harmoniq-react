@@ -3,67 +3,60 @@ import eye from '../../images/auth/eye-crossed.svg';
 import { Component } from 'react';
 import { useState } from 'react';
 
-export const Register = ({currentUsers, onSendData, modal}) => {
+export const Register = ({ currentUsers, onSendData, modal }) => {
   // state = {
   //   username: '',
   //   email: '',
   //   password: '',
   //   users: this.props.users
   // };
-  const [username, setUsername] = useState("")
-    const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [users, setUsers] = useState(currentUsers)
 
+  const [modalData, setModalData] = useState(null);
 
-  const collectInfo = event => {
+  const collectInfo = (event) => {
     event.preventDefault();
-    if(event.target.elements.validation.value !== event.target.elements.password.value){
-      return modal("Паролі не одинакові. Прошу повторити спробую", "ok")
-    } else {
-    setUsername(event.target.elements.username.value)
-    setEmail(event.target.elements.email.value)
-    setPassword(event.target.elements.password.value)
-    const message = users.map((user) => {
-      if (user.email === email && user.password === password && user.name === username) { 
-      return modal("User like this already exists, would you like to log in?", "log in");
-      } else {
-        modal("Registration successful! You can now log in.", "ok");
-        return [username, email, password, true];
-      }
 
-      onSendData(message[0]);
-    
-    })
-  //     this.setState({
-  //   username: event.target.elements.username.value,
-  //   email: event.target.elements.email.value,
-  //   password: event.target.elements.password.value 
-  // }, () => {
-  //           const message = this.state.users.map((user)=>{
-  //       if (user.email === this.state.email && user.password === this.state.password && user.name === this.state.username) { 
-  //       return alert("User like this already exists, would you like to log in?");
-  //       } else {
-  //         // console.log("Registration successful! You can now log in.");
-  //        return [this.state.username, this.state.email, this.state.password, true];
-  //       }
-  //   })
-  //       this.props.onSendData(message[0]);
-        
-  // }
-  //   )
-    // ;
-        event.target.elements.email.value = '';
-    event.target.elements.password.value = '';
-    event.target.elements.username.value = '';
-    event.target.elements.validation.value = '';
+    const username = event.target.username.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    const validation = event.target.validation.value;
+
+    if (validation !== password) {
+      setModalData({
+        text: "Passwords are different, try again.",
+        buttonText: "ok",
+      });
+      return;
     }
+
+    const userExists = currentUsers.find(
+      (user) => user.name === username && user.email === email && user.password === password
+    );
+
+    if (userExists) {
+      setModalData({
+        text: "User like this already exists, would you like to log in?",
+        buttonText: "log in",
+      });
+    } else {
+      setModalData({
+        text: "Registration successful! You can now log in.",
+        buttonText: "ok",
+      });
+      onSendData({ name: username, email, password, registered: true });
+    }
+
+
+    event.target.username.value = "";
+    event.target.email.value = "";
+    event.target.password.value = "";
+    event.target.validation.value = "";
   };
 
+  const closeModal = () => setModalData(null);
 
-
-
-    return (
+  return (
+    <>
       <form className={styles.registerForm} onSubmit={collectInfo}>
         <h2 className={styles.name}>Register</h2>
         <p className={styles.p}>
@@ -72,7 +65,12 @@ export const Register = ({currentUsers, onSendData, modal}) => {
         <ul className={styles.list}>
           <li className={styles.item}>
             <p className={styles.label}>Enter your name</p>
-            <input name="username" type="username" className={styles.input} placeholder="Max" />
+            <input
+              name="username"
+              type="username"
+              className={styles.input}
+              placeholder="Max"
+            />
           </li>
           <li className={styles.item}>
             <p className={styles.label}>Enter your email address</p>
@@ -85,14 +83,22 @@ export const Register = ({currentUsers, onSendData, modal}) => {
           </li>
           <li className={styles.item}>
             <p className={styles.label}>Create a strong password</p>
-            <input             
-            name='password'
- type="password" className={styles.input} placeholder="*****" />
+            <input
+              name="password"
+              type="password"
+              className={styles.input}
+              placeholder="*****"
+            />
             <img src={eye} alt="" className={styles.eye} />
           </li>
           <li className={styles.item}>
             <p className={styles.label}>Repeat your password</p>
-            <input type="password" className={styles.input} placeholder="*****" name="validation"/>
+            <input
+              name="validation"
+              type="password"
+              className={styles.input}
+              placeholder="*****"
+            />
             <img src={eye} alt="" className={styles.eye} />
           </li>
         </ul>
@@ -100,15 +106,29 @@ export const Register = ({currentUsers, onSendData, modal}) => {
           Create account
         </button>
         <p className={styles.sugtestion}>
-          Already have an account?{' '}
+          Already have an account?{" "}
           <a href="" className={styles.link}>
             Log in
           </a>
         </p>
       </form>
-    );
-  }
 
+      {modalData && (
+        <div className={styles.modalOverlay} onClick={closeModal}>
+          <div
+            className={styles.modal}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p>{modalData.text}</p>
+            <button className={styles.modalButton} onClick={closeModal}>
+              {modalData.buttonText}
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
 
 
 // export class Register extends Component {

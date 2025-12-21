@@ -11,18 +11,22 @@ import { useState } from "react";
  const Auth = ({currentUsers, onSendData}) => {
 
 const [users, setUsers] = useState(currentUsers)
-const [pageRegistered, setPageRegistered] = useState(false)
+const [pageRegistered, setPageRegistered] = useState(true)
 
 
 
-const Modal = (text, link) =>{
-    return console.log(`
-    <div class={styles.modal}>
-    <p>${text}</p>
-    <button type=button class={styles.modal-button}>${link}</button>
+const Modal = ({ text, buttonText, onClose }) => {
+  return (
+    <div className={styles.modalOverlay}>
+      <div className={styles.modal}>
+        <p>{text}</p>
+        <button type="button" className={styles.modalButton} onClick={onClose}>
+          {buttonText}
+        </button>
+      </div>
     </div>
-    `)
-}
+  );
+};
 
    const infoCollectorFromSon = (data) => {
         onSendData(data)
