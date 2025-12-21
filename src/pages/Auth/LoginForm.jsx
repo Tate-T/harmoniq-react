@@ -6,54 +6,49 @@ import { useState } from 'react';
 
 
 
-export const Login = ({currentUsers, modal}) => {
+export const Login = ({ currentUsers, modal }) => {
   // state = {
   //   email: '',
   //   password: '',
   // };
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [users, setUsers] = useState(currentUsers)
+
+  const [modalData, setModalData] = useState(null);
+
+  const collectInfo = (event) => {
+    event.preventDefault();
+
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    const user = currentUsers.find(
+      (u) => u.email === email && u.password === password
+    );
 
 
-  const collectInfo = (event) => {  
-    event.preventDefault()
-    
-    setEmail(event.target.elements.email.value)
-    setPassword(event.target.elements.password.value)
+    if (user) {
+      setModalData({ text: "You succsesfully logged in!", buttonText: "continue" });
+    } else {
+      setModalData({
+        text: "This accaunt not registered yet. Would you like to register it??",
+        buttonText: "register",
+      });
+    }
 
-    event.target.elements.password.value=''
-    event.target.elements.email.value=''
-
-        const message = users.filter((user) => {
-      if (user.email === email && user.password === password) { 
-      return modal("Ви успішно залогувалися", "ok");
-      } else {
-       return modal("Такого юзера не існує, чи б не хотілося вам зареєструватися?", "register");
-      }
-    
-    })
-
-  //   event.preventDefault();
-  //     this.setState({
-  //   email: event.target.elements.email.value,
-  //   password: event.target.elements.password.value 
-  // }, () => {
-  //   console.log("Email:", this.state.email);
-  //   console.log("Password:", this.state.password);
-  // });
+    event.target.email.value = "";
+    event.target.password.value = "";
   };
 
+  const closeModal = () => setModalData(null);
 
-
-    return (
+  return (
+    <>
       <form className={styles.loginForm} onSubmit={collectInfo}>
         <h2 className={styles.name}>Log in</h2>
         <ul className={styles.list}>
           <li className={styles.item}>
             <p className={styles.label}>Enter your email address</p>
             <input
-            name='email'
+              name="email"
               type="email"
               className={styles.input}
               placeholder="email@gmail.com"
@@ -63,7 +58,7 @@ export const Login = ({currentUsers, modal}) => {
           <li className={styles.item}>
             <p className={styles.label}>Enter a password</p>
             <input
-            name='password'
+              name="password"
               type="password"
               className={styles.input}
               placeholder="*****"
@@ -76,14 +71,30 @@ export const Login = ({currentUsers, modal}) => {
           Login
         </button>
         <p className={styles.sugtestion}>
-          Don’t have an account?{' '}
+          Don’t have an account?{" "}
           <a href="" className={styles.link}>
             Register
           </a>
         </p>
       </form>
-    );
-  }
+
+
+      {modalData && (
+        <div className={styles.modalOverlay} onClick={closeModal}>
+          <div
+            className={styles.modal}
+            onClick={(e) => e.stopPropagation()} 
+          >
+            <p>{modalData.text}</p>
+            <button className={styles.modalButton} onClick={closeModal}>
+              {modalData.buttonText}
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
 
 
 
