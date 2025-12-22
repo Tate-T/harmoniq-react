@@ -10,12 +10,8 @@ import './App.css';
 import { Component } from 'react';
 import axios from 'axios'
 
-
+const users = [
   
-
-export default class App extends Component {
-  state = {
-    users: [
       { _id: "6881563901add19ee16fcff2", name: "Анастасія Олійник", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fcff2.webp", articlesAmount: 2, email: "anastasia.oliinyk@example.com", password: "ana123", login: false, favorites: [] },
       { _id: "6881563901add19ee16fcff3", name: "Назар Ткаченко", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fcff3.webp", articlesAmount: 9, email: "nazar.tkachenko@example.com", password: "naz789", login: false, favorites: [] },
       { _id: "6881563901add19ee16fcff4", name: "Єва Бондаренко", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fcff4.webp", articlesAmount: 6, email: "yeva.bondarenko@example.com", password: "eva456", login: false, favorites: [] },
@@ -35,7 +31,13 @@ export default class App extends Component {
       { _id: "6881563901add19ee16fd002", name: "Олександра Ткаченко", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fd002.webp", articlesAmount: 12, email: "oleksandra.tkachenko@example.com", password: "ole963", login: false, favorites: [] },
       { _id: "6881563901add19ee16fd003", name: "Дарина Лисенко", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fd003.webp", articlesAmount: 10, email: "daryna.lysenko@example.com", password: "dar357", login: false, favorites: [] },
       { _id: "6881563901add19ee16fd004", name: "Єва Шевченко", avatarUrl: "https://ftp.goit.study/img/harmoniq/users/6881563901add19ee16fd004.webp", articlesAmount: 8, email: "yeva.shevchenko@example.com", password: "eva147", login: false, favorites: [] }
-      ],
+      
+]
+  
+
+export default class App extends Component {
+  state = {
+    users: [],
     articles: []
     };
 
@@ -49,6 +51,18 @@ export default class App extends Component {
             console.error("API ERROR:", error.response);
         })
     }
+
+    fetchUsers = () => {
+      axios.get('https://687bab4eb4bc7cfbda86bede.mockapi.io/posts')
+       .then(response => {
+            this.setState({ users: response.data }); 
+            console.log(response.data)
+        })
+        .catch(error => {
+            console.error("API ERROR:", error.response);
+        })
+    }
+
 
 userCreator = (data) => {
   console.log(this.state.users);
@@ -73,12 +87,11 @@ userCreator = (data) => {
 
 
     render () {
-      console.log(`This is articles in state ${this.state.articles}`)
       return <div className="App">
         <Home users={this.state.users}/>
         <ArticlesPage />
         <Auth currentUsers={this.state.users} onSendData={this.userCreator}/>
-        <AuthorProfilePage articles={this.state.articles}/>
+        <AuthorProfilePage users={this.state.users} articles={this.state.articles}/>
         <Authors users={this.state.users}/>
         <CreateArticlePage />
         <UserProfile/>
@@ -88,6 +101,7 @@ userCreator = (data) => {
 
     componentDidMount() {
       this.fetchArticles()
+      this.fetchUsers()
     }
 }
 
