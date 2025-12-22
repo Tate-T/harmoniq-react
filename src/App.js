@@ -42,8 +42,8 @@ export default class App extends Component {
     fetchArticles = () => {
       axios.get('https://69481e8d1ee66d04a44ebf1c.mockapi.io/articles/articles')
        .then(response => {
-            this.setState({ articles: response.articles }); 
-            console.log(response.articles)
+            this.setState({ articles: response.data }); 
+            console.log(response.data)
         })
         .catch(error => {
             console.error("API ERROR:", error.response);
@@ -73,6 +73,7 @@ userCreator = (data) => {
 
 
     render () {
+      console.log(`This is articles in state ${this.state.articles}`)
       return <div className="App">
         <Home users={this.state.users}/>
         <ArticlesPage />
@@ -80,7 +81,7 @@ userCreator = (data) => {
         <AuthorProfilePage articles={this.state.articles}/>
         <Authors users={this.state.users}/>
         <CreateArticlePage />
-        <UserProfile />
+        <UserProfile/>
         <ArticlesList articles={this.state.articles}/>
       </div>
     }
