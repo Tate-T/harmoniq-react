@@ -2,8 +2,11 @@
 import React from "react";
 import x from "./AuthorProfilePage.module.css";
 import { ArticlesList } from "./ArticlesList";
+import { useState } from 'react'
 
-export function AuthorProfilePage({articles}) {
+export function AuthorProfilePage({articles}, { users }) {
+  const user = users[Math.floor(Math.random() * users.length)]
+
   return (
     <div className="container">
       <div className={x.app}>
@@ -14,12 +17,12 @@ export function AuthorProfilePage({articles}) {
             className={x.profileImg}
           />
           <div>
-            <h2 className={x.profileName}>Naomi</h2>
+            <h2 className={x.profileName}>${user.name}</h2>
             <p className={x.profileInfo}>96 articles</p>
           </div>
         </div>
 
-        <ArticlesList articles={articles} />
+        <ArticlesList articles={articles} user={user}/>
       </div>
     </div>
   );
