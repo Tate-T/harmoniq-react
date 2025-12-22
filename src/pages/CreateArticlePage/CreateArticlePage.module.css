@@ -129,9 +129,11 @@
   line-height: normal;
     @media screen and (min-width: 704px) {
    width: 550px;
+   
   }
   @media screen and (min-width: 1250px) {
    width: 800px;
+
   }
 }
 
