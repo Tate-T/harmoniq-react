@@ -3,7 +3,9 @@ import { Footer } from '../../components/Footer/footer'
 import styles from './Home.module.css'
 import fam from '../../images/fam.png'
 import flower from '../../images/flower.png'
+import flowerMobile from '../../images/flowermobile.png'
 import person from '../../images/person.png'
+import family2 from '../../images/family2.png'
 import sec1img from '../../images/sec1img.png';
 import ArticleCard from '../../components/ArticlesList/ArticlesList';
 import { AuthorProfilePage } from '../AuthorProfilePage/AuthorProfilePage'
@@ -18,14 +20,15 @@ export const Home = ({ users }) => {
             <section className={styles.info}>
                 <div className='container'>
                     <div className={styles.info__div}>
-                        <div className={styles.info__wrapper}>
-                            <h1 className={styles.info__title}>Find your harmony in community</h1>
-                            <div className={styles.info__btns}>
-                                <button className={styles['info__btns--btn1']}>Go to Articles</button>
-                                <button className={styles['info__btns--btn2']}>Register</button>
-                            </div>
+
+                    <div className={styles.background}></div>
+                    <div className={styles.info__wrapper}>
+                        <h1 className={styles.info__title}>Find your <span className={styles.span}>harmony</span> in community</h1>
+                        <div className={styles.info__btns}>
+                            <button className={styles['info__btns--btn1']}>Go to Articles</button>
+                            <button className={styles['info__btns--btn2']}>Register</button>
                         </div>
-                        {/* <img className={styles.info__img} src={sec1img} alt="Section image" /> */}
+                    </div>
                     </div>
                 </div>
             </section>
@@ -37,10 +40,10 @@ export const Home = ({ users }) => {
                                 <h2 className={styles['about__info--title']}>About us</h2>
                                 <p className={styles['about__info--descr']}>Harmoniq is a mindful publishing platform dedicated to mental health and well-being. We bring together writers, thinkers, and readers who believe that open, thoughtful stories can heal, inspire, and connect. Whether you're here to share your journey or learn from others — this is your space to  slow down, reflect, and grow.</p>
                             </div>
-                            <img className={styles.about__flower} src={flower} alt="Flower" />
+                            <img className={styles.about__flower} src={flowerMobile} alt="Flower" />
                         </div>
                         <div className={styles.about__secondWrapper}>
-                            <img className={styles.about__family} src={fam} alt="Family" />
+                            <img className={styles.about__family} src={family2} alt="Family" />
                             <img className={styles.about__person} src={person} alt="Person" />
                         </div>
                     </div>
