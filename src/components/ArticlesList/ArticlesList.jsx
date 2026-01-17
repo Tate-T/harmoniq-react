@@ -1,11 +1,11 @@
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/footer';
 import styles from './ArticlesList.module.css';
-import articles from '../../harmoniq.articles.json';
 import { useEffect, useState } from 'react';
 import { ArticleModal } from './ArticleModal';
 
-const ArticleCard = ({
+ const ArticleCard = (
+{
   title,
   desc,
   image,
@@ -13,7 +13,8 @@ const ArticleCard = ({
   onFavorite,
   isFavorite,
   onOpen,
-}) => {
+}
+) => {
   return (
     <article className={styles.ArticleList}>
       <img className={styles.ArticleImage} src={image} alt={title} />
@@ -55,12 +56,16 @@ export function ArticlesList() {
     favoriteArticles: [],
     filter: 'all',
   });
+  const [articles, setArticles] = useState([]);
 
   const [selectedArticle, setSelectedArticle] = useState(null);
 
   function loadMore() {
     setData(prev => ({ ...prev, visibleCount: prev.visibleCount + 10 }));
   }
+  useEffect(() => {
+  fetch('https://694824281ee66d04a44ecd50.mockapi.io/articles/').then(response => response.json()).then(data => setArticles(data)).catch(err => console.error("error:", err))
+}, []);
 
   function favorited(id) {
     setData(prev => {
@@ -150,6 +155,7 @@ export function ArticlesList() {
           title={selectedArticle.title}
           image={selectedArticle.img}
           article={selectedArticle.article}
+          date={selectedArticle.date}
           onClose={() => setSelectedArticle(null)}
         />
       )}

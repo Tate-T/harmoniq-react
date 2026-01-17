@@ -106,3 +106,21 @@
     font-size: 14px;
   }
 }
+
+.date{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.boxes{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #545454;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+}
