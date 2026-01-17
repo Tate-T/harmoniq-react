@@ -1,12 +1,13 @@
-import './ArticleModal.css';
+import styles from './ArticleModal.module.css';
 
-export function ArticleModal({ title, image, article, onClose }) {
+export function ArticleModal({ title, image, article, onClose, date }) {
   return (
-    <div className="overlay overlayOpenModal" onClick={onClose}>
-      <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-        <button className="modalButtonClose" onClick={onClose}>✕</button>
+    <div className={`${styles.overlay} ${styles.overlayOpenModal}`}onClick={onClose}>
+      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+        <button className={styles.modalButtonClose} onClick={onClose}>✕</button>
         <h2>{title}</h2>
         <img src={image} alt={title} />
+        <div className={styles.boxes}><p className={styles.date}>Дата публікації: {date}</p></div>
         <p>{article}</p>
       </div>
     </div>
