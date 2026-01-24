@@ -1,11 +1,10 @@
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/footer';
 import styles from './ArticlesList.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { ArticleModal } from './ArticleModal';
 
- const ArticleCard = (
-{
+const ArticleCard = ({
   title,
   desc,
   image,
@@ -13,8 +12,7 @@ import { ArticleModal } from './ArticleModal';
   onFavorite,
   isFavorite,
   onOpen,
-}
-) => {
+}) => {
   return (
     <article className={styles.ArticleList}>
       <img className={styles.ArticleImage} src={image} alt={title} />
@@ -50,7 +48,7 @@ import { ArticleModal } from './ArticleModal';
   );
 };
 
-export function ArticlesList({articles}) {
+export function ArticlesList() {
   const [data, setData] = useState({
     visibleCount: 10,
     favoriteArticles: [],
@@ -60,12 +58,25 @@ export function ArticlesList({articles}) {
 
   const [selectedArticle, setSelectedArticle] = useState(null);
 
+  const results = useMemo(() => {
+    let results = articles;
+    if (data.filter === 'favorite') {
+      results = results.filter(article =>
+        data.favoriteArticles.includes(article._id.$oid)
+      );
+    }
+    return;
+    results.slice(0, data.visibleCount);
+  }, [data, articles]);
   function loadMore() {
     setData(prev => ({ ...prev, visibleCount: prev.visibleCount + 10 }));
   }
   useEffect(() => {
-  fetch('https://694824281ee66d04a44ecd50.mockapi.io/articles/').then(response => response.json()).then(data => setArticles(data)).catch(err => console.error("error:", err))
-}, []);
+    fetch('https://694824281ee66d04a44ecd50.mockapi.io/articles/')
+      .then(response => response.json())
+      .then(data => setArticles(data))
+      .catch(err => console.error('error:', err));
+  }, []);
 
   function favorited(id) {
     setData(prev => {
@@ -86,14 +97,8 @@ export function ArticlesList({articles}) {
       filter: event.target.value,
     }));
   }
-  let displayedArticles = articles;
 
-  if (data.filter === 'favorite') {
-    displayedArticles = displayedArticles.filter(article =>
-      data.favoriteArticles.includes(article._id.$oid)
-    );
-  }
-  displayedArticles = displayedArticles.slice(0, data.visibleCount);
+  // displayedArticles = displayedArticles.slice(0, data.visibleCount);
   useEffect(() => {
     console.log('component mounted');
   }, []);
