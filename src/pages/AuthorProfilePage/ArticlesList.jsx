@@ -2,7 +2,7 @@
 import React from "react";
 import x from "./AuthorProfilePage.module.css";
 
-export function ArticlesList({ articles }, {user}) {
+export function ArticlesList({ articles, user}) {
   return (
     <div className={x.articles}>
       {articles.map((article, index) => (

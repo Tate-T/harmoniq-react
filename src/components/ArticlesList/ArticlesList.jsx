@@ -1,7 +1,7 @@
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/footer';
 import styles from './ArticlesList.module.css';
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useCallback } from 'react';
 import { ArticleModal } from './ArticleModal';
 
 const ArticleCard = ({
@@ -58,6 +58,13 @@ export function ArticlesList() {
 
   const [selectedArticle, setSelectedArticle] = useState(null);
 
+  useEffect(() => {
+    fetch('https://694824281ee66d04a44ecd50.mockapi.io/articles/')
+      .then(response => response.json())
+      .then(data => setArticles(data))
+      .catch(err => console.error('error:', err));
+  }, []);
+
   const results = useMemo(() => {
     let results = articles;
     if (data.filter === 'favorite') {
@@ -68,15 +75,14 @@ export function ArticlesList() {
     return;
     results.slice(0, data.visibleCount);
   }, [data, articles]);
-  function loadMore() {
-    setData(prev => ({ ...prev, visibleCount: prev.visibleCount + 10 }));
-  }
-  useEffect(() => {
-    fetch('https://694824281ee66d04a44ecd50.mockapi.io/articles/')
-      .then(response => response.json())
-      .then(data => setArticles(data))
-      .catch(err => console.error('error:', err));
-  }, []);
+
+  // function loadMore() {
+  //   setData(prev => ({ ...prev, visibleCount: prev.visibleCount + 10 }));
+  // }
+
+  const loadMore = useCallback(() => {
+        setData(prev => ({ ...prev, visibleCount: prev.visibleCount + 10 }));
+  }, [data])
 
   function favorited(id) {
     setData(prev => {
@@ -116,7 +122,7 @@ export function ArticlesList() {
             <h1 className={styles.ArticleTitle}>Articles</h1>
             <div className={styles.ArticleBoxes}>
               <h2 className={styles.ArticleAmount}>
-                {displayedArticles.length} articles
+                {results.length} articles
               </h2>
               <select
                 onChange={handleFilterChange}
@@ -130,7 +136,7 @@ export function ArticlesList() {
           </header>
 
           <section className={styles.ArticlesGrid}>
-            {displayedArticles.map(item => (
+            {results.map(item => (
               <ArticleCard
                 key={item._id.$oid}
                 title={item.title}
