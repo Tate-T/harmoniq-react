@@ -52,16 +52,16 @@ export default class App extends Component {
         })
     }
 
-    fetchUsers = () => {
-      axios.get('https://687bab4eb4bc7cfbda86bede.mockapi.io/posts')
-       .then(response => {
-            this.setState({ users: response.data }); 
-            console.log(response.data)
-        })
-        .catch(error => {
-            console.error("API ERROR:", error.response);
-        })
-    }
+    // fetchUsers = () => {
+    //   axios.get('https://687bab4eb4bc7cfbda86bede.mockapi.io/posts')
+    //    .then(response => {
+    //         this.setState({ users: response.data }); 
+    //         console.log(response.data)
+    //     })
+    //     .catch(error => {
+    //         console.error("API ERROR:", error.response);
+    //     })
+    // }
 
 
 userCreator = (data) => {
@@ -86,12 +86,14 @@ userCreator = (data) => {
 };
 
 
+
     render () {
+      console.log(this.state.users)
       return <div className="App">
         <Home users={this.state.users}/>
         <ArticlesPage />
         <Auth currentUsers={this.state.users} onSendData={this.userCreator}/>
-        <AuthorProfilePage users={this.state.users} articles={this.state.articles}/>
+        <AuthorProfilePage usersList={this.state.users} articles={this.state.articles}/>
         <Authors users={this.state.users}/>
         <CreateArticlePage />
         <UserProfile/>
