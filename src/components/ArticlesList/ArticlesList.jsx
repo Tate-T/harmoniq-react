@@ -72,17 +72,14 @@ export function ArticlesList() {
         data.favoriteArticles.includes(article._id.$oid)
       );
     }
-    return;
-    results.slice(0, data.visibleCount);
+    return results.slice(0, data.visibleCount);
   }, [data, articles]);
 
-  // function loadMore() {
-  //   setData(prev => ({ ...prev, visibleCount: prev.visibleCount + 10 }));
-  // }
+
 
   const loadMore = useCallback(() => {
         setData(prev => ({ ...prev, visibleCount: prev.visibleCount + 10 }));
-  }, [data])
+  }, [])
 
   function favorited(id) {
     setData(prev => {
