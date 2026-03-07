@@ -56,7 +56,7 @@ export function ArticlesList({articles}) {
     favoriteArticles: [],
     filter: 'all',
   });
-  const [articles, setArticles] = useState([]);
+  // const [articles, setArticles] = useState([]);
 
   const [selectedArticle, setSelectedArticle] = useState(null);
 
@@ -64,7 +64,7 @@ export function ArticlesList({articles}) {
     setData(prev => ({ ...prev, visibleCount: prev.visibleCount + 10 }));
   }
   useEffect(() => {
-  fetch('https://694824281ee66d04a44ecd50.mockapi.io/articles/').then(response => response.json()).then(data => setArticles(data)).catch(err => console.error("error:", err))
+  // fetch('https://694824281ee66d04a44ecd50.mockapi.io/articles/').then(response => response.json()).then(data => setArticles(data)).catch(err => console.error("error:", err))
 }, []);
 
   function favorited(id) {

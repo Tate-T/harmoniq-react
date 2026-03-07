@@ -4,9 +4,17 @@ import x from "./AuthorProfilePage.module.css";
 import { ArticlesList } from "./ArticlesList";
 import { useState } from 'react'
 
-export function AuthorProfilePage({articles}, { users }) {
-  const user = users[Math.floor(Math.random() * users.length)]
+// export function AuthorProfilePage({articles}, { users }) {
+//   const user = users[Math.floor(Math.random() * users.length)]
 
+export function AuthorProfilePage({usersList, articles }) {
+  console.log(usersList)
+  // const userArr = usersList[Math.floor(Math.random() * usersList.length)]
+  // console.log('userArr', userArr);
+  console.log('usersList', usersList);
+  
+  
+  const user = usersList.map(user => (console.log(user)))
   return (
     <div className="container">
       <div className={x.app}>
