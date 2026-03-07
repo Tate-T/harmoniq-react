@@ -251,6 +251,7 @@ const users = [
       });
   };
 
+
   const fetchUsers = () => {
     axios
       .get('https://687bab4eb4bc7cfbda86bede.mockapi.io/posts')
@@ -262,7 +263,6 @@ const users = [
         console.error('API ERROR:', error.response);
       });
   };
-
 
   const userCreator = data => {
     console.log('users', users);

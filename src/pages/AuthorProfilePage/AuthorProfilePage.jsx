@@ -5,6 +5,7 @@ import { ArticlesList } from "./ArticlesList";
 import { useState } from 'react'
 
 export function AuthorProfilePage({usersList, articles }) {
+  console.log(usersList)
   
   
   const user = usersList.map(user => (console.log(user)))
