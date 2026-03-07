@@ -263,6 +263,7 @@ const users = [
       });
   };
 
+
   const userCreator = data => {
     console.log('users', users);
 
@@ -299,7 +300,6 @@ const users = [
     // }));
   };
 
-  console.log("articles", articles)
   return (
     <div className="App">
       <Home users={users} />
