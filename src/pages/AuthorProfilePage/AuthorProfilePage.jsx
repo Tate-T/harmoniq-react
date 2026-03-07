@@ -6,7 +6,9 @@ import { useState } from 'react'
 
 export function AuthorProfilePage({usersList, articles }) {
   console.log(usersList)
-  const userArr = usersList[Math.floor(Math.random() * usersList.length)]
+  
+  
+  const user = usersList.map(user => (console.log(user)))
   return (
     <div className="container">
       <div className={x.app}>
@@ -17,12 +19,12 @@ export function AuthorProfilePage({usersList, articles }) {
             className={x.profileImg}
           />
           <div>
-            <h2 className={x.profileName}>{userArr.name}</h2>
+            <h2 className={x.profileName}>${user.name}</h2>
             <p className={x.profileInfo}>96 articles</p>
           </div>
         </div>
 
-        <ArticlesList articles={articles} user={userArr}/>
+        <ArticlesList articles={articles} user={user}/>
       </div>
     </div>
   );
