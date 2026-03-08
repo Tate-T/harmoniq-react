@@ -9,6 +9,7 @@ import { UserProfile } from './pages/UserProfile/UserProfile';
 import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Routes, Route } from 'react-router-dom';
 
 const users = [
   {
@@ -222,10 +223,10 @@ const users = [
   },
 ];
 
- const App = () => {
+const App = () => {
   const [users, setUsers] = useState([]);
   const [articles, setArticles] = useState([]);
-  
+
   // state = {
   //   users: [],
   //   articles: []
@@ -241,7 +242,8 @@ const users = [
   // }
 
   const fetchArticles = async () => {
-    axios.get('https://69481e8d1ee66d04a44ebf1c.mockapi.io/articles/articles')
+    axios
+      .get('https://69481e8d1ee66d04a44ebf1c.mockapi.io/articles/articles')
       .then(response => {
         setArticles(response.data);
         console.log(response.data);
@@ -250,7 +252,6 @@ const users = [
         console.error('API ERROR:', error.response);
       });
   };
-
 
   const fetchUsers = () => {
     axios
@@ -301,20 +302,48 @@ const users = [
   };
 
   return (
+    // <div className="App">
+    //   <Home users={users} />
+    //   <ArticlesPage />
+    //   <Auth currentUsers={users} onSendData={userCreator} />
+
+    // <AuthorProfilePage
+    //   usersList={users}
+    //   articles={articles}
+    // />
+    // <Authors users={users} />
+    //   <CreateArticlePage />
+
+    //   <UserProfile />
+    //   <ArticlesList articles={articles} />
+
+    // </div>
     <div className="App">
-      <Home users={users} />
-      <ArticlesPage />
-      <Auth currentUsers={users} onSendData={userCreator} />
-      <AuthorProfilePage
-        usersList={users}
-        articles={articles}
-      />
-      <Authors users={users} />
-      <CreateArticlePage />
-      <UserProfile />
-      <ArticlesList articles={articles} />
+      <Routes>
+        <Route path="/" element={<Home users={users} />} />
+        <Route path="/articles" element={<ArticlesPage />} />
+        <Route
+          path="/authorisation"
+          element={<Auth currentUsers={users} onSendData={userCreator} />}
+        />
+        <Route
+          path="/profile"
+          element={<AuthorProfilePage usersList={users} articles={articles} />}
+        />
+        <Route path="/authors" element={<Authors users={users} />} />
+        <Route
+          path="/newArticle"
+          element={<CreateArticlePage />}
+        />
+        <Route path="/user" element={<UserProfile />} />
+        <Route
+          path="/products"
+          element={<ArticlesList articles={articles} />
+}
+        />
+      </Routes>
     </div>
   );
 };
 
-export default App
+export default App;
