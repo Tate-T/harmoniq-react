@@ -6,7 +6,7 @@ import styles from './ArticlesPage.module.css';
 export const ArticlesPage = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>
         <section className={styles.articles}>
           <div className={styles.articles__container}>
@@ -137,7 +137,7 @@ export const ArticlesPage = () => {
           </div>
         </section>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

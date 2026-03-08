@@ -1,7 +1,7 @@
 1. сторінка авторизація - Остап
 2. сторінка Home - Лідія
 3. сторінка Articles, ArticlesList - Артем
-4. сторінка ArticlePage - Андрій М.
+4. сторінка ArticlePage -( Андрій М.) передали Артему
 5. сторінка Authors - Станіслав
 6. сторінка AuthorProfilePage - Святослав
 7. сторінка CreateArticlePage - Іван

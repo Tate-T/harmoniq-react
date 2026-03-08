@@ -302,22 +302,6 @@ const App = () => {
   };
 
   return (
-    // <div className="App">
-    //   <Home users={users} />
-    //   <ArticlesPage />
-    //   <Auth currentUsers={users} onSendData={userCreator} />
-
-    // <AuthorProfilePage
-    //   usersList={users}
-    //   articles={articles}
-    // />
-    // <Authors users={users} />
-    //   <CreateArticlePage />
-
-    //   <UserProfile />
-    //   <ArticlesList articles={articles} />
-
-    // </div>
     <div className="App">
       <Routes>
         <Route path="/" element={<Home users={users} />} />

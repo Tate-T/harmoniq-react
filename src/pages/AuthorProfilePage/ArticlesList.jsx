@@ -1,4 +1,4 @@
-
+import { NavLink } from 'react-router-dom';
 import React from "react";
 import x from "./AuthorProfilePage.module.css";
 
@@ -11,7 +11,9 @@ export function ArticlesList({ articles }) {
           <p className={x.cardAuthor}>{article.author}</p>
           <h3 className={x.cardTitle}>{article.title}</h3>
           <p className={x.cardDesc}>{article.description}</p>
-          <button className={x.cardBtn}>Learn more</button>
+          <NavLink to="/articles" end className={x.cardBtn}>            
+              Home
+            </NavLink>
         </div>
       ))}
     </div>
