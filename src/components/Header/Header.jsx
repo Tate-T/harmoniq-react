@@ -1,7 +1,7 @@
 import logo from '../../images/logo.png';
 import style from './header.module.css';
 import { IoReorderThreeOutline } from 'react-icons/io5';
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   return (
