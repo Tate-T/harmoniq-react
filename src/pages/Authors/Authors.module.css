@@ -1,157 +1,143 @@
 .section {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}   
-
-.authorsTitle {
-    color: #000000;
-    margin-bottom: 20px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 2rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-
+.authorsTitle {
+  color: #000000;
+  margin-bottom: 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 2rem;
+}
 
 .authorsList {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 360px;
-    width: 100%;
-    padding: 0;
-    justify-content: center;
-    gap: 16px;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 360px;
+  width: 100%;
+  padding: 0;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .authorsItem {
-    width: 162px;
-    padding-left: 8px;
-    padding-right: 8px;
-    
+  width: 162px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .img {
-    width: 148px;
-    height: 148px;
-    margin-bottom: 20px;
-    border-radius: 50%;
+  width: 148px;
+  height: 148px;
+  margin-bottom: 20px;
+  border-radius: 50%;
 }
 
 .name {
-    font-weight: 700;
-    font-size: 24px;
-    text-align: center;
-    color: black;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  color: black;
 }
 
-    .authorsButton {
-        margin-top: 30px;
-        background-color: rgb(12, 83, 12);
-        color: #FFFFFF;
-        border-radius: 64px;
-        padding: 16px;
-        max-width: 361px;
-        width: 100%;
-        height: 57px;
-        font-weight: 700;
-        font-size: 18px;
-        
-    }
-
-
+.authorsButton {
+  margin-top: 30px;
+  background-color: #649179;
+  border: none;
+  color: #ffffff;
+  border-radius: 64px;
+  padding: 16px;
+  max-width: 361px;
+  width: 100%;
+  height: 57px;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: "Manrope", sans-serif;
+}
 
 @media screen and (min-width: 704px) {
-    .authorsList {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        max-width: 680px;
-        gap: 24px;
-        
-    
-}
+  .authorsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 680px;
+    gap: 24px;
+  }
 
-    .authorsItem {
-        width: 286px;
-        padding: 12px;
-}
+  .authorsItem {
+    width: 286px;
+    padding: 12px;
+  }
 
-.img {
+  .img {
     width: 262px;
     height: 262px;
-}
+  }
 
-.name {
+  .name {
     font-weight: 700;
     font-size: 24px;
     text-align: center;
     color: black;
-}
+  }
 
-    .authorsButton {
-        margin-top: 30px;
-        color: #FFFFFF;
-        border-radius: 64px;
-        padding: 16px;
-        max-width: 340px;
-        height: 57px;
-        font-weight: 700;
-        font-size: 18px;
-        outline: none;
-        
-    }
-
+  .authorsButton {
+    margin-top: 30px;
+    color: #ffffff;
+    border-radius: 64px;
+    padding: 16px;
+    max-width: 340px;
+    height: 57px;
+    font-weight: 700;
+    font-size: 18px;
+    outline: none;
+  }
 }
 
 @media screen and (min-width: 1250px) {
-    .authorsList {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 1222px;
-        gap: 24px;
-        justify-content: center;
-    
+  .authorsList {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1222px;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .authorsItem {
+    width: 286px;
+  }
+
+  .authorsButton {
+    max-width: 390px;
+    height: 57px;
+  }
+
+  .img {
+    width: 262px;
+    height: 262px;
+  }
+
+  .name {
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    color: black;
+  }
+
+  .authorsButton {
+    margin-top: 30px;
+    color: #ffffff;
+    border-radius: 64px;
+    padding: 16px;
+    width: 390px;
+    height: 57px;
+    outline: none;
+    font-weight: 700;
+    font-size: 18px;
+  }
 }
-
-    .authorsItem {
-        width: 286px;
-    }
-
-
-    .authorsButton {
-        max-width: 390px;
-        height: 57px;
-    }
-
-    .img {
-        width: 262px;
-        height: 262px;
-    }
-
-    .name {
-        font-weight: 700;
-        font-size: 24px;
-        text-align: center;
-        color: black;
-}
-
-    .authorsButton {
-        margin-top: 30px;
-        color: #FFFFFF;
-        border-radius: 64px;
-        padding: 16px;
-        width: 390px;
-        height: 57px;
-        outline: none;
-        font-weight: 700;
-        font-size: 18px;
-        
-    }
-
-}
-
