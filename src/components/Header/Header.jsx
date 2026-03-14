@@ -15,7 +15,9 @@ export const Header = () => {
     <>
       <header className={style.header}>
         <div className={`container ${style.headerContainer}`}>
-          <img src={logo} alt="harmoniq-logo" className={style.logo} />
+                        <NavLink className={style.item} to="/" end>
+                          <img src={logo} alt="harmoniq-logo" className={style.logo} />
+              </NavLink>
 
           <div className={style.nav}>
             <nav className={style.list}>
