@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/harmoniq-react/static/css/main.d43fa61c.css",
-    "main.js": "/harmoniq-react/static/js/main.e43aa7e2.js",
+    "main.css": "/harmoniq-react/static/css/main.f2efc02c.css",
+    "main.js": "/harmoniq-react/static/js/main.fc499a78.js",
     "static/media/flower.png": "/harmoniq-react/static/media/flower.de58441411e9c4581b4e.png",
     "static/media/fam.png": "/harmoniq-react/static/media/fam.981522f4512d46209610.png",
     "static/media/sec1img.png": "/harmoniq-react/static/media/sec1img.ba1e69764815e23c07bc.png",
@@ -27,11 +27,11 @@
     "static/media/userprofileimg2.png": "/harmoniq-react/static/media/userprofileimg2.c44856d1392d12449b9b.png",
     "index.html": "/harmoniq-react/index.html",
     "static/media/eye-crossed.svg": "/harmoniq-react/static/media/eye-crossed.cb5a0ebcf37de9acfe1247bdafa655e0.svg",
-    "main.d43fa61c.css.map": "/harmoniq-react/static/css/main.d43fa61c.css.map",
-    "main.e43aa7e2.js.map": "/harmoniq-react/static/js/main.e43aa7e2.js.map"
+    "main.f2efc02c.css.map": "/harmoniq-react/static/css/main.f2efc02c.css.map",
+    "main.fc499a78.js.map": "/harmoniq-react/static/js/main.fc499a78.js.map"
   },
   "entrypoints": [
-    "static/css/main.d43fa61c.css",
-    "static/js/main.e43aa7e2.js"
+    "static/css/main.f2efc02c.css",
+    "static/js/main.fc499a78.js"
   ]
 }
