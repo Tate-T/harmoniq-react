@@ -54,15 +54,15 @@ export const Home = ({ users }) => {
                 <div className="container">
                     <div className={styles.popular__wrapper}>
                         <h2 className={styles.popular__title}>Popular Articles</h2>
-                        <NavLink to="/products" className={styles.popular__link}>
+                        <div className={styles.popular__link}>
                             <p className={styles['popular__link--text']}>
-                                <a className={styles.popular__a} href='#' target='_blank' rel="noreferrer">Go to all Articles</a>
+                                <NavLink to='/products' className={styles.popular__a} href='#' target='_blank' rel="noreferrer">Go to all Articles</NavLink>
                                 </p>
-                                 <a className={styles.popular__svg} href='#' target='_blank' rel="noreferrer">
+                                 <NavLink to="/products "className={styles.popular__svg} href='#' target='_blank' rel="noreferrer">
                                      <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.875 19.5293L19.1195 5.2793M19.1195 5.2793H11.448M19.1195 5.2793L19.1196 12.9509" stroke="#374F42" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg></a>
-                        </NavLink>
+                            </svg></NavLink>
+                        </div>
                     </div>
                     <div className={styles.popular__authorsList}>
                         <ArticlesList articles={articles} />
@@ -71,15 +71,15 @@ export const Home = ({ users }) => {
             </section>
             <section className={styles.top}>
                 <div className="container">
-                    <NavLink to="/authors" className={styles.top__wrapper}>
+                    <div className={styles.top__wrapper}>
                         <h2 className={styles.top__title}>Top Creators</h2>
                         <div className={styles.top__link}>
                             <p className={styles['top__link--text']}><a className={styles.top__a} href='#' target='_blank' rel="noreferrer">Go to all Creators</a></p>
-                            <a className={styles.top__svg} href='#' target='_blank' rel="noreferrer"> <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <NavLink className={styles.top__svg} href='#' target='_blank' rel="noreferrer" to="/authors"> <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.875 19.5293L19.1195 5.2793M19.1195 5.2793H11.448M19.1195 5.2793L19.1196 12.9509" stroke="#374F42" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg></a>
+                            </svg></NavLink>
                         </div>
-                    </NavLink>
+                    </div>
                     <div className={styles.top__authorsList}>
                         <AuthorsList users={users} />
                     </div>

@@ -268,7 +268,7 @@
   background-color: #d1e0d8;
   transform: translateY(-2px);
   transition-duration: 150ms;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   color: #374f42;
   outline: #374f42 1px solid;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }

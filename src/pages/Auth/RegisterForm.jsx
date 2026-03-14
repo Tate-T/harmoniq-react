@@ -3,7 +3,7 @@ import eye from '../../images/auth/eye-crossed.svg';
 import { Component } from 'react';
 import { useState } from 'react';
 
-export const Register = ({ currentUsers, onSendData, modal }) => {
+export const Register = ({ currentUsers, onSendData, modal, changeRegistered }) => {
   // state = {
   //   username: '',
   //   email: '',
@@ -12,9 +12,12 @@ export const Register = ({ currentUsers, onSendData, modal }) => {
   // };
 
   const [modalData, setModalData] = useState(null);
+  
+
 
   const collectInfo = (event) => {
     event.preventDefault();
+
 
     const username = event.target.username.value;
     const email = event.target.email.value;
@@ -106,11 +109,12 @@ export const Register = ({ currentUsers, onSendData, modal }) => {
           Create account
         </button>
         <p className={styles.sugtestion}>
-          Already have an account?{" "}
-          <a href="" className={styles.link}>
-            Log in
-          </a>
-        </p>
+  Don’t have an account?{" "}
+  <a href="#" className={styles.link} onClick={(e) => { e.preventDefault(); changeRegistered(); }}>
+    Log in
+  </a>
+</p>
+
       </form>
 
       {modalData && (
