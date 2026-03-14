@@ -21,6 +21,10 @@
 }
 
 .createArticle__maineTitle {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 8px;
+
   color: var(--Black, #070721);
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   font-family: Manrope;
@@ -28,31 +32,29 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  display: flex;
-  justify-content: start;
-  margin-bottom: 8px;
 }
 
 .createArticle__title {
-  color: var(--Black, #070721);
-  font-family: Manrope;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
   line-height: normal;
   display: flex;
   justify-content: start;
   margin-bottom: 8px;
+   color: var(--Black, #070721);
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .createArticle__mincontainer {
   border-radius: var(--Interactive-border-radius---radius-i-sm, 8px);
-  border: 1px solid var(--Light-Gray, #9f9f9f);
   width: 300px;
   height: 90px;
   margin-bottom: 32px;
   display: flex;
   justify-content: start;
+  border: 1px solid var(--Light-Gray, #9f9f9f);
+
   @media screen and (min-width: 1250px) {
    width: 809px;
     height: 48px;
@@ -61,7 +63,6 @@
 
 .createArticle__text {
   color: var(--Black, #070721);
-  font-family: Manrope;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -69,6 +70,7 @@
   padding-left: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
+   font-family: Manrope;
   @media screen and (min-width: 704px) {
    padding-left: 12px;
   padding-top: 12px;
@@ -83,7 +85,6 @@
 
 .createArticle__twoContainer {
   border-radius: var(--Interactive-border-radius---radius-i-sm, 8px);
-  border: 1px solid var(--Light-Gray, #9f9f9f);
   width: 300px;
   margin-top: -200px;
   padding-left: 12px;
@@ -91,6 +92,7 @@
   padding-bottom: 12px;
   padding-right: 12px;
   margin-bottom: 32px;
+  border: 1px solid var(--Light-Gray, #9f9f9f);
   @media screen and (min-width: 704px) {
    width: 550px;
   }
@@ -106,6 +108,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
 }
 
 .createArticle__button {
@@ -120,8 +123,6 @@
   color: var(--White, #f7fffb);
   border: none;
   width: 300px;
-
-  /* body/md/SemiBold */
   font-family: Manrope;
   font-size: 16px;
   font-style: normal;
