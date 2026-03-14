@@ -4,8 +4,7 @@ import styles from './ArticlesList.module.css';
 import { useEffect, useState } from 'react';
 import { ArticleModal } from './ArticleModal';
 
- const ArticleCard = (
-{
+const ArticleCard = ({
   title,
   desc,
   image,
@@ -13,8 +12,7 @@ import { ArticleModal } from './ArticleModal';
   onFavorite,
   isFavorite,
   onOpen,
-}
-) => {
+}) => {
   return (
     <article className={styles.ArticleList}>
       <img className={styles.ArticleImage} src={image} alt={title} />
@@ -50,7 +48,7 @@ import { ArticleModal } from './ArticleModal';
   );
 };
 
-export function ArticlesList({articles}) {
+export function ArticlesList({ articles }) {
   const [data, setData] = useState({
     visibleCount: 10,
     favoriteArticles: [],
@@ -64,8 +62,8 @@ export function ArticlesList({articles}) {
     setData(prev => ({ ...prev, visibleCount: prev.visibleCount + 10 }));
   }
   useEffect(() => {
-  // fetch('https://694824281ee66d04a44ecd50.mockapi.io/articles/').then(response => response.json()).then(data => setArticles(data)).catch(err => console.error("error:", err))
-}, []);
+    // fetch('https://694824281ee66d04a44ecd50.mockapi.io/articles/').then(response => response.json()).then(data => setArticles(data)).catch(err => console.error("error:", err))
+  }, []);
 
   function favorited(id) {
     setData(prev => {
