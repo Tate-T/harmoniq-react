@@ -248,14 +248,32 @@
   transition-duration: 150ms;
 }
 
-.item {
+.primaryPage {
   color: #374f42;
   font-weight: 700;
   font-size: 12px;
   transition-duration: 250ms;
 }
+.primaryPage::after {
+  content: '';
+  height: 2px;
+  background: #374f42;
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+}
 
-.item:hover {
+.unprimary {
+  color: #374f42;
+  font-weight: 700;
+  font-size: 12px;
+  transition-duration: 250ms;
+}
+.unprimary:hover {
+  transform: translateY(-2px);
+  transition-duration: 150ms;
+}
+.primaryPage:hover {
   transform: translateY(-2px);
   transition-duration: 150ms;
 }
@@ -268,7 +286,7 @@
   background-color: #d1e0d8;
   transform: translateY(-2px);
   transition-duration: 150ms;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   color: #374f42;
   outline: #374f42 1px solid;
 }
