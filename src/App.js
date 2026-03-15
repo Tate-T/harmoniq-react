@@ -313,7 +313,11 @@ const App = () => {
         <Route
           path="/profile"
           element={<AuthorProfilePage usersList={users} articles={articles} />}
+        >
+           <Route
+          path="/profile"
         />
+        </Route>
         <Route path="/authors" element={<Authors users={users} />} />
         <Route
           path="/newArticle"

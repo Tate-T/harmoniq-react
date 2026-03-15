@@ -3,6 +3,7 @@ import eye from '../../images/auth/eye-crossed.svg';
 import { Component } from 'react';
 import UserList from './UserList';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -71,9 +72,10 @@ export const Login = ({ currentUsers, modal, changeRegistered }) => {
             <img src={eye} alt="" className={styles.eye} />
           </li>
         </ul>
-        <button className={styles.btn} type="submit">
+        
+        <Link to='/profile' className={styles.btn} type="submit">
           Login
-        </button>
+        </Link>
 <p className={styles.sugtestion}>
   Don’t have an account?{" "}
   <a href="#" className={styles.link} onClick={(e) => { e.preventDefault(); changeRegistered(); }}>
