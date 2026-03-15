@@ -6,13 +6,16 @@ import { useState } from 'react';
 
 
 
-export const Login = ({ currentUsers, modal }) => {
+export const Login = ({ currentUsers, modal, changeRegistered }) => {
   // state = {
   //   email: '',
   //   password: '',
   // };
 
   const [modalData, setModalData] = useState(null);
+
+  
+
 
   const collectInfo = (event) => {
     event.preventDefault();
@@ -23,6 +26,7 @@ export const Login = ({ currentUsers, modal }) => {
     const user = currentUsers.find(
       (u) => u.email === email && u.password === password
     );
+
 
 
     if (user) {
@@ -70,12 +74,13 @@ export const Login = ({ currentUsers, modal }) => {
         <button className={styles.btn} type="submit">
           Login
         </button>
-        <p className={styles.sugtestion}>
-          Don’t have an account?{" "}
-          <a href="" className={styles.link}>
-            Register
-          </a>
-        </p>
+<p className={styles.sugtestion}>
+  Don’t have an account?{" "}
+  <a href="#" className={styles.link} onClick={(e) => { e.preventDefault(); changeRegistered(); }}>
+    Register
+  </a>
+</p>
+
       </form>
 
 

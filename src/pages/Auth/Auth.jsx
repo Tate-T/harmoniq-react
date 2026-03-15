@@ -3,46 +3,35 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/footer";
 import { Register } from "./RegisterForm";
 import { Login } from "./LoginForm";
-import { Component } from "react";
 import { useState } from "react";
 
+export const Auth = ({ currentUsers, onSendData }) => {
+  const [users, setUsers] = useState(currentUsers);
+  const [pageRegistered, setPageRegistered] = useState(false); 
 
+  const handleChange = () => {
+    setPageRegistered(prev => !prev);
+  };
 
- const Auth = ({currentUsers, onSendData}) => {
+  const infoCollectorFromSon = (data) => {
+    onSendData(data);
+  };
 
-const [users, setUsers] = useState(currentUsers)
-const [pageRegistered, setPageRegistered] = useState(true)
-
-
-
-const Modal = ({ text, buttonText, onClose }) => {
   return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modal}>
-        <p>{text}</p>
-        <button type="button" className={styles.modalButton} onClick={onClose}>
-          {buttonText}
-        </button>
-      </div>
-    </div>
+    <>
+      <Header />
+      <main>
+        {pageRegistered ? (
+          <Login currentUsers={users} changeRegistered={handleChange} />
+        ) : (
+          <Register currentUsers={users} onSendData={infoCollectorFromSon} changeRegistered={handleChange} />
+        )}
+      </main>
+      <Footer />
+    </>
   );
 };
 
-   const infoCollectorFromSon = (data) => {
-        onSendData(data)
-   }
-
-
-        return (
-            <>
-                <Header />
-                <main>
-                    {pageRegistered === false ? <Login currentUsers={users} modal={Modal}/> : <Register  currentUsers={users} onSendData={infoCollectorFromSon} modals={Modal}/>}
-                </main>
-                <Footer />
-            </>
-        )
-    }
 
 
 // export default class Auth extends Component {
