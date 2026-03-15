@@ -2,7 +2,7 @@ import logo from '../../images/logo.png';
 import style from './header.module.css';
 import { IoReorderThreeOutline } from 'react-icons/io5';
 import { NavLink } from 'react-router-dom';
-import { useState} from 'react';
+import { useState } from 'react';
 
 export const Header = () => {
   const [mobileActive, setMobileActive] = useState(false);
@@ -15,22 +15,42 @@ export const Header = () => {
     <>
       <header className={style.header}>
         <div className={`container ${style.headerContainer}`}>
-                        <NavLink className={style.item} to="/" end>
-                          <img src={logo} alt="harmoniq-logo" className={style.logo} />
-              </NavLink>
+          <NavLink className={style.item} to="/">
+            <img src={logo} alt="harmoniq-logo" className={style.logo} />
+          </NavLink>
 
           <div className={style.nav}>
             <nav className={style.list}>
-              <NavLink className={style.item} to="/" end>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? `${style.primaryPage}` : `${style.unprimary}`
+                }
+                to="/"
+              >
                 Home
               </NavLink>
-              <NavLink className={style.item} to="/products">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? `${style.primaryPage}` : `${style.unprimary}`
+                }
+                to="/products"
+              >
                 Articles
               </NavLink>
-              <NavLink className={style.item} to="/authors">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? `${style.primaryPage}` : `${style.unprimary}`
+                }
+                to="/authors"
+              >
                 Creators
               </NavLink>
-              <NavLink className={style.item} to="/authorisation">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? `${style.primaryPage}` : `${style.unprimary}`
+                }
+                to="/authorisation"
+              >
                 Log in
               </NavLink>
             </nav>
