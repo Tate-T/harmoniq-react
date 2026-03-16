@@ -4,6 +4,7 @@ import { ArticlesList } from './ArticlesList';
 import { useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/footer';
+import { NavLink } from 'react-router-dom';
 export function AuthorProfilePage({ usersList, articles }) {
   console.log(usersList);
 
@@ -23,7 +24,24 @@ export function AuthorProfilePage({ usersList, articles }) {
             <p className={x.profileInfo}>96 articles</p>
           </div>
         </div>
-
+        <div>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? `${x.primaryList}` : `${x.unprimary}`
+            }
+            to="/products"
+          >
+            My Articles
+          </NavLink>
+           <NavLink
+            className={({ isActive }) =>
+              isActive ? `${x.primaryList}` : `${x.unprimary}`
+            }
+            to="/"
+          >
+            Saved Articles
+          </NavLink>
+        </div>
         <ArticlesList articles={articles} user={user} />
       </div>
       <Footer />

@@ -83,3 +83,33 @@
 .cardBtn:hover {
   background-color: #f3f3f3;
 }
+
+.primaryList{
+  color: #374f42;
+  font-weight: 700;
+  font-size: 12px;
+  transition-duration: 250ms;
+}
+.primaryList::after {
+  content: '';
+  height: 2px;
+  background: #374f42;
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.unprimary {
+  color: #374f42;
+  font-weight: 700;
+  font-size: 12px;
+  transition-duration: 250ms;
+}
+.unprimary:hover {
+  transform: translateY(-2px);
+  transition-duration: 150ms;
+}
+.primaryList:hover {
+  transform: translateY(-2px);
+  transition-duration: 150ms;
+}

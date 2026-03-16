@@ -313,7 +313,13 @@ const App = () => {
         <Route
           path="/profile"
           element={<AuthorProfilePage usersList={users} articles={articles} />}
-        />
+        >
+          <Route
+            path="articles"
+            element={<ArticlesList articles={articles} />
+            }
+          />
+        </Route>
         <Route path="/authors" element={<Authors users={users} />} />
         <Route
           path="/newArticle"
@@ -323,7 +329,7 @@ const App = () => {
         <Route
           path="/products"
           element={<ArticlesList articles={articles} />
-}
+          }
         />
       </Routes>
     </div>
