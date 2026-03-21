@@ -5,10 +5,15 @@ import { useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/footer';
 import { NavLink } from 'react-router-dom';
-export function AuthorProfilePage({ usersList, articles }) {
-  console.log(usersList);
+import { useParams } from 'react-router-dom';
 
-  const user = usersList.map(user => console.log(user));
+
+export function AuthorProfilePage({authors, articles}) {
+  const params = useParams()
+  const { authorId } = useParams()
+  console.log(authorId)
+  const author = authors.find((author) => authorId === author._id)
+  
   return (
     <div className="container">
       <Header />
@@ -20,8 +25,8 @@ export function AuthorProfilePage({ usersList, articles }) {
             className={x.profileImg}
           />
           <div>
-            <h2 className={x.profileName}>${user.name}</h2>
-            <p className={x.profileInfo}>96 articles</p>
+            <h2 className={x.profileName}>{author.name}</h2>
+            <p className={x.profileInfo}>{author.aritclesAmount} articles</p>
           </div>
         </div>
         <div>
@@ -42,7 +47,7 @@ export function AuthorProfilePage({ usersList, articles }) {
             Saved Articles
           </NavLink>
         </div>
-        <ArticlesList articles={articles} user={user} />
+        <ArticlesList articles={articles} authorId={authorId} />
       </div>
       <Footer />
     </div>

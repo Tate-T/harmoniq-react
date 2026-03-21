@@ -2,7 +2,8 @@ import { NavLink } from 'react-router-dom';
 import React from "react";
 import x from "./AuthorProfilePage.module.css";
 
-export function ArticlesList({ articles }) {
+export function ArticlesList({ articles, authorId}) {
+  // const authorsArticles = articles.filter((article) => article.)
   return (
     <div className={x.articles}>
       {articles.map((article, index) => (
