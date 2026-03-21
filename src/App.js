@@ -10,6 +10,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
+import { AuthorContext } from "./pages/AuthorProfilePage/authorContext";
 
 const users = [
   {
@@ -310,7 +311,7 @@ const App = () => {
           path="/authorisation"
           element={<Auth currentUsers={users} onSendData={userCreator} />}
         />
-        <Route
+        {/* <Route
           path="/profile"
           element={<AuthorProfilePage usersList={users} articles={articles} />}
         >
@@ -319,18 +320,20 @@ const App = () => {
             element={<ArticlesList articles={articles} />
             }
           />
-        </Route>
+        </Route> */}
         <Route path="/authors" element={<Authors users={users} />} />
         <Route
           path="/newArticle"
           element={<CreateArticlePage />}
         />
-        <Route path="/user" element={<UserProfile />} />
-        <Route
-          path="/products"
-          element={<ArticlesList articles={articles} />
-          }
-        />
+         <AuthorContext.Provider value={{ authorId: "" }}>
+          <Route path="/authors/:authorId" element={<AuthorProfilePage authors={users} articles={articles}/>} />
+          <Route
+            path="/products"
+            element={<ArticlesList articles={articles} />
+            }
+          />
+        </AuthorContext.Provider>
       </Routes>
     </div>
   );

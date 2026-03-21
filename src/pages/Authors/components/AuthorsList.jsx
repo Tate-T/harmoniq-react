@@ -7,7 +7,7 @@ export const AuthorsList = ({ users }) => {
         <li key={user._id} className={styles.authorsItem}>
           <img className={styles.img} src={user.avatarUrl} alt={user.name} />
           {/* <p className={styles.name}>{user.name}</p> */}
-          <NavLink  to="/profile" >
+          <NavLink to={user._id} >
              <p className={styles.name}>{user.name}</p> 
           </NavLink>
         </li>
