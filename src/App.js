@@ -243,27 +243,29 @@ const App = () => {
   // }
 
   const fetchArticles = async () => {
-    axios
-      .get('https://69481e8d1ee66d04a44ebf1c.mockapi.io/articles/articles')
-      .then(response => {
-        setArticles(response.data);
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.error('API ERROR:', error.response);
-      });
+    try {
+      const response = await axios.get(
+        'https://69481e8d1ee66d04a44ebf1c.mockapi.io/articles/articles'
+      );
+
+      setArticles(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error('API ERROR:', error.response || error.message);
+    }
   };
 
-  const fetchUsers = () => {
-    axios
-      .get('https://687bab4eb4bc7cfbda86bede.mockapi.io/posts')
-      .then(response => {
-        setUsers(response.data);
-        console.log('fetchUser', response.data);
-      })
-      .catch(error => {
-        console.error('API ERROR:', error.response);
-      });
+  const fetchUsers = async () => {
+    try {
+      const response = await axios.get(
+        'https://687bab4eb4bc7cfbda86bede.mockapi.io/posts'
+      );
+
+      setUsers(response.data);
+      console.log('fetchUser', response.data);
+    } catch (error) {
+      console.error('API ERROR:', error.response || error.message);
+    }
   };
 
   const userCreator = data => {
@@ -326,14 +328,12 @@ const App = () => {
           path="/newArticle"
           element={<CreateArticlePage />}
         />
-         <AuthorContext.Provider value={{ authorId: "" }}>
-          <Route path="/authors/:authorId" element={<AuthorProfilePage authors={users} articles={articles}/>} />
+        <Route path="/authors/:authorId" element={<AuthorProfilePage authors={users} fetchUsers={fetchUsers}/>} />
           <Route
             path="/products"
-            element={<ArticlesList articles={articles} />
+            element={<ArticlesList fetchArticles={fetchArticles} />
             }
           />
-        </AuthorContext.Provider>
       </Routes>
     </div>
   );

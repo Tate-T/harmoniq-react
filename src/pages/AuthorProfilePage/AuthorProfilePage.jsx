@@ -8,25 +8,28 @@ import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 
-export function AuthorProfilePage({authors, articles}) {
-  const params = useParams()
+export function AuthorProfilePage({ authors, fetchUsers }) {
   const { authorId } = useParams()
   console.log(authorId)
-  const author = authors.find((author) => authorId === author._id)
-  
+  if (authors.length === 0) {
+      fetchUsers()
+  }
+  const author = authors?.find((author) => authorId === author._id)
+  console.log(authors)
+  console.log(author)
   return (
     <div className="container">
       <Header />
       <div className={x.app}>
         <div className={x.profile}>
           <img
-            src="https://picsum.photos/100"
+            src={author.avatarUrl}
             alt="profile"
             className={x.profileImg}
           />
           <div>
             <h2 className={x.profileName}>{author.name}</h2>
-            <p className={x.profileInfo}>{author.aritclesAmount} articles</p>
+            <p className={x.profileInfo}>{author.articlesAmount} articles</p>
           </div>
         </div>
         <div>
@@ -47,7 +50,7 @@ export function AuthorProfilePage({authors, articles}) {
             Saved Articles
           </NavLink>
         </div>
-        <ArticlesList articles={articles} authorId={authorId} />
+        <ArticlesList />
       </div>
       <Footer />
     </div>
