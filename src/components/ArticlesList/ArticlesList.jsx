@@ -48,7 +48,7 @@ const ArticleCard = ({
   );
 };
 
-export function ArticlesList({ articles }) {
+function ArticlesList({ articles }) {
   const [data, setData] = useState({
     visibleCount: 10,
     favoriteArticles: [],
@@ -160,3 +160,5 @@ export function ArticlesList({ articles }) {
     </>
   );
 }
+
+export default ArticlesList;

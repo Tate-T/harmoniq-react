@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 
-export const Authors = ({users}) => {
+const Authors = ({users}) => {
   const [count, setCount] = useState(8)
 
 
@@ -34,3 +34,5 @@ export const Authors = ({users}) => {
         </>
     );
 }
+
+export default Authors;

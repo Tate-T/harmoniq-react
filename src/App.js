@@ -1,17 +1,56 @@
-import { ArticlesList } from './components/ArticlesList/ArticlesList';
-import { ArticlesPage } from './pages/ArticlesPage/ArticlesPage';
-import Auth from './pages/Auth/Auth';
-import { AuthorProfilePage } from './pages/AuthorProfilePage/AuthorProfilePage';
-import { Authors } from './pages/Authors/Authors';
-import { CreateArticlePage } from './pages/CreateArticlePage/CreateArticlePage';
-import { Home } from './pages/Home/Home';
-import { UserProfile } from './pages/UserProfile/UserProfile';
+// import { ArticlesList } from './components/ArticlesList/ArticlesList';
+// import { ArticlesPage } from './pages/ArticlesPage/ArticlesPage';
+// import Auth from './pages/Auth/Auth';
+// import { AuthorProfilePage } from './pages/AuthorProfilePage/AuthorProfilePage';
+// import { Authors } from './pages/Authors/Authors';
+// import { CreateArticlePage } from './pages/CreateArticlePage/CreateArticlePage';
+// import { Home } from './pages/Home/Home';
+// import { UserProfile } from './pages/UserProfile/UserProfile';
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy } from 'react';
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
 import { AuthorContext } from "./pages/AuthorProfilePage/authorContext";
 
+const Home = lazy(() =>
+  import("./pages/Home/Home")
+// webpackChunkName: "home-view" 
+)
+
+const ArticlesList = lazy(() => 
+  import("./components/ArticlesList/ArticlesList")
+// webpackChunkName: "ArticlesList" 
+)
+
+const ArticlesPage = lazy(() => 
+  import("./pages/ArticlesPage/ArticlesPage")
+// webpackChunkName: "ArticlesPage" 
+)
+
+const Authors = lazy(() =>
+  import("./pages/Authors/Authors")
+// webpackChunkName: "Authors" 
+)
+
+const UserProfile = lazy(() =>
+  import("./pages/UserProfile/UserProfile")
+// webpackChunkName: "UserProfile" 
+)
+
+const CreateArticlePage = lazy(() =>
+  import("./pages/CreateArticlePage/CreateArticlePage")
+// webpackChunkName: "CreateArticlePage" 
+)
+
+const AuthorProfilePage = lazy(() =>
+  import("./pages/AuthorProfilePage/AuthorProfilePage")
+// webpackChunkName: "AuthorProfilePage" 
+)
+
+const Auth = lazy(() => 
+  import("./pages/Auth/Auth")
+// webpackChunkName: "Auth" 
+)
 const users = [
   {
     _id: '6881563901add19ee16fcff2',

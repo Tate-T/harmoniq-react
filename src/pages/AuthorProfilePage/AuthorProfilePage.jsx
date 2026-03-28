@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 
-export function AuthorProfilePage({ authors, fetchUsers }) {
+function AuthorProfilePage({ authors, fetchUsers }) {
   const { authorId } = useParams()
   console.log(authorId)
   if (authors.length === 0) {
@@ -56,3 +56,5 @@ export function AuthorProfilePage({ authors, fetchUsers }) {
     </div>
   );
 }
+
+export default AuthorProfilePage;

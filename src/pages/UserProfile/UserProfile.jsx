@@ -103,7 +103,7 @@ const articles = [
   },
 ];
 
-export const UserProfile = () => {
+const UserProfile = () => {
   return (
     <>
       <Header />
@@ -172,3 +172,5 @@ export const UserProfile = () => {
     </>
   );
 };
+
+export default UserProfile;

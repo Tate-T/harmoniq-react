@@ -1,7 +1,7 @@
 import nature from "../../images/mini-nature.png";
 import sty from "./CreateArticlePage.module.css";
 
-export const CreateArticlePage = () => {
+const CreateArticlePage = () => {
   return (
     <section className={sty.createArticle}>
       <div className="container">
@@ -112,3 +112,5 @@ export const CreateArticlePage = () => {
     </section>
   );
 };
+
+export default CreateArticlePage;
