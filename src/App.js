@@ -10,6 +10,7 @@ import './App.css';
 import { useState, useEffect, lazy } from 'react';
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
+import { AuthorContext } from "./pages/AuthorProfilePage/authorContext";
 
 const Home = lazy(() =>
   import("./pages/Home/Home")
@@ -281,27 +282,29 @@ const App = () => {
   // }
 
   const fetchArticles = async () => {
-    axios
-      .get('https://69481e8d1ee66d04a44ebf1c.mockapi.io/articles/articles')
-      .then(response => {
-        setArticles(response.data);
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.error('API ERROR:', error.response);
-      });
+    try {
+      const response = await axios.get(
+        'https://69481e8d1ee66d04a44ebf1c.mockapi.io/articles/articles'
+      );
+
+      setArticles(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error('API ERROR:', error.response || error.message);
+    }
   };
 
-  const fetchUsers = () => {
-    axios
-      .get('https://687bab4eb4bc7cfbda86bede.mockapi.io/posts')
-      .then(response => {
-        setUsers(response.data);
-        console.log('fetchUser', response.data);
-      })
-      .catch(error => {
-        console.error('API ERROR:', error.response);
-      });
+  const fetchUsers = async () => {
+    try {
+      const response = await axios.get(
+        'https://687bab4eb4bc7cfbda86bede.mockapi.io/posts'
+      );
+
+      setUsers(response.data);
+      console.log('fetchUser', response.data);
+    } catch (error) {
+      console.error('API ERROR:', error.response || error.message);
+    }
   };
 
   const userCreator = data => {
@@ -349,7 +352,7 @@ const App = () => {
           path="/authorisation"
           element={<Auth currentUsers={users} onSendData={userCreator} />}
         />
-        <Route
+        {/* <Route
           path="/profile"
           element={<AuthorProfilePage usersList={users} articles={articles} />}
         >
@@ -358,18 +361,18 @@ const App = () => {
             element={<ArticlesList articles={articles} />
             }
           />
-        </Route>
+        </Route> */}
         <Route path="/authors" element={<Authors users={users} />} />
         <Route
           path="/newArticle"
           element={<CreateArticlePage />}
         />
-        <Route path="/user" element={<UserProfile />} />
-        <Route
-          path="/products"
-          element={<ArticlesList articles={articles} />
-          }
-        />
+        <Route path="/authors/:authorId" element={<AuthorProfilePage authors={users} fetchUsers={fetchUsers}/>} />
+          <Route
+            path="/products"
+            element={<ArticlesList fetchArticles={fetchArticles} />
+            }
+          />
       </Routes>
     </div>
   );

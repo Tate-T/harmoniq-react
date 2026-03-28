@@ -5,23 +5,31 @@ import { useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/footer';
 import { NavLink } from 'react-router-dom';
-function AuthorProfilePage({ usersList, articles }) {
-  console.log(usersList);
+import { useParams } from 'react-router-dom';
 
-  const user = usersList.map(user => console.log(user));
+
+function AuthorProfilePage({ authors, fetchUsers }) {
+  const { authorId } = useParams()
+  console.log(authorId)
+  if (authors.length === 0) {
+      fetchUsers()
+  }
+  const author = authors?.find((author) => authorId === author._id)
+  console.log(authors)
+  console.log(author)
   return (
     <div className="container">
       <Header />
       <div className={x.app}>
         <div className={x.profile}>
           <img
-            src="https://picsum.photos/100"
+            src={author.avatarUrl}
             alt="profile"
             className={x.profileImg}
           />
           <div>
-            <h2 className={x.profileName}>${user.name}</h2>
-            <p className={x.profileInfo}>96 articles</p>
+            <h2 className={x.profileName}>{author.name}</h2>
+            <p className={x.profileInfo}>{author.articlesAmount} articles</p>
           </div>
         </div>
         <div>
@@ -42,7 +50,7 @@ function AuthorProfilePage({ usersList, articles }) {
             Saved Articles
           </NavLink>
         </div>
-        <ArticlesList articles={articles} user={user} />
+        <ArticlesList />
       </div>
       <Footer />
     </div>
