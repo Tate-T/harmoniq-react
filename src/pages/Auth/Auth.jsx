@@ -5,7 +5,7 @@ import { Register } from "./RegisterForm";
 import { Login } from "./LoginForm";
 import { useState } from "react";
 
-export const Auth = ({ currentUsers, onSendData }) => {
+const Auth = ({ currentUsers, onSendData }) => {
   const [users, setUsers] = useState(currentUsers);
   const [pageRegistered, setPageRegistered] = useState(false); 
 

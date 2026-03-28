@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/footer';
 import { NavLink } from 'react-router-dom';
-export function AuthorProfilePage({ usersList, articles }) {
+function AuthorProfilePage({ usersList, articles }) {
   console.log(usersList);
 
   const user = usersList.map(user => console.log(user));
@@ -48,3 +48,5 @@ export function AuthorProfilePage({ usersList, articles }) {
     </div>
   );
 }
+
+export default AuthorProfilePage;

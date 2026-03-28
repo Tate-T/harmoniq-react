@@ -3,7 +3,7 @@ import { Footer } from '../../components/Footer/footer';
 import flower from '../../images/articleapage/flower.png';
 import styles from './ArticlesPage.module.css';
 
-export const ArticlesPage = () => {
+const ArticlesPage = () => {
   return (
     <>
       <Header />
@@ -141,3 +141,6 @@ export const ArticlesPage = () => {
     </>
   );
 };
+
+
+export default ArticlesPage;

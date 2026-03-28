@@ -14,7 +14,7 @@ import { ArticlesList } from '../AuthorProfilePage/ArticlesList'
 import articles from '../../harmoniq.articles.json'
 import { NavLink } from 'react-router-dom'
 
-export const Home = ({ users }) => {
+const Home = ({ users }) => {
     return <>
         <Header />
         <main>
@@ -89,3 +89,5 @@ export const Home = ({ users }) => {
         <Footer />
     </>
 }
+
+export default Home;
