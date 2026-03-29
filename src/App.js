@@ -9,7 +9,7 @@ import { UserProfile } from './pages/UserProfile/UserProfile';
 import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { AuthorContext } from "./pages/AuthorProfilePage/authorContext";
 
 const users = [
@@ -227,6 +227,10 @@ const users = [
 const App = () => {
   const [users, setUsers] = useState([]);
   const [articles, setArticles] = useState([]);
+
+  const location = useLocation()
+
+  console.log(location)
 
   // state = {
   //   users: [],
