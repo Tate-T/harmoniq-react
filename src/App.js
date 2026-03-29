@@ -7,12 +7,15 @@
 // import { Home } from './pages/Home/Home';
 // import { UserProfile } from './pages/UserProfile/UserProfile';
 import './App.css';
-import { useState, useEffect, lazy } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import axios from 'axios';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AuthorContext } from "./pages/AuthorProfilePage/authorContext";
+import {PacmanLoader } from 'react-spinners';
+// import 'react-spinners-css/dist/styles.css';
 
 const Home = lazy(() =>
+
   import("./pages/Home/Home")
 // webpackChunkName: "home-view" 
 )
@@ -349,6 +352,16 @@ const App = () => {
 
   return (
     <div className="App">
+    <Suspense fallback={<PacmanLoader
+  color="#d1e0d8"
+  cssOverride={{
+position: "absolute",
+top: "50%",
+left: "50%",
+transform: "translate(-50%, -50%)"
+}}
+  size={100}
+/>}>
       <Routes>
         <Route path="/" element={<Home users={users} />} />
         <Route path="/articles" element={<ArticlesPage />} />
@@ -378,6 +391,7 @@ const App = () => {
             }
           />
       </Routes>
+      </Suspense>
     </div>
   );
 };
